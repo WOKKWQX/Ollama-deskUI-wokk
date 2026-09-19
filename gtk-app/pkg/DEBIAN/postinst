@@ -1,0 +1,18 @@
+#!/bin/sh
+# 安装后刷新图标主题与桌面数据库缓存
+set -e
+
+case "$1" in
+    configure)
+        if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+            for d in /usr/share/icons/hicolor; do
+                [ -d "$d" ] && gtk-update-icon-cache -f -q "$d" >/dev/null 2>&1 || true
+            done
+        fi
+        if command -v update-desktop-database >/dev/null 2>&1; then
+            update-desktop-database -q /usr/share/applications >/dev/null 2>&1 || true
+        fi
+        ;;
+esac
+
+exit 0

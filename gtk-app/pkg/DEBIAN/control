@@ -1,0 +1,13 @@
+Package: offideskollama
+Version: 3.6.2
+Architecture: amd64
+Maintainer: offideskOllama <noreply@offidesk.ollama>
+Installed-Size: 22604
+Depends: libgtk-4-1
+Section: utils
+Priority: optional
+Homepage: https://ollama.com
+Description: offideskOllama — Ollama 图形化控制台（GTK4 原生版）
+ 本地 Ollama 图形管理工具：模型列表、聊天、生成、已加载、嵌入、
+ 系统托盘、设置、首次引导。纯 GTK4 原生 UI，
+ 跟随 Cinnamon / GNOME 系统 GTK 主题（Mint-Y 等）。

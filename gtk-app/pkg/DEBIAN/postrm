@@ -1,0 +1,28 @@
+#!/bin/sh
+# 卸载 / 清除时清理各用户的配置目录，确保重装视为全新（重新弹出首次引导）
+set -e
+
+PKG_CONFIG_DIR="offideskollama"
+
+case "$1" in
+    remove|purge)
+        if command -v getent >/dev/null 2>&1; then
+            getent passwd | while IFS=: read -r name _pw uid _gid _gecos home _shell; do
+                case "$uid" in
+                    ''|*[!0-9]*) continue ;;
+                esac
+                [ "$uid" -ge 1000 ] || continue
+                [ -n "$home" ] && [ "$home" != "/" ] || continue
+                [ -d "$home/.config/$PKG_CONFIG_DIR" ] || continue
+                rm -rf "$home/.config/$PKG_CONFIG_DIR"
+            done
+        fi
+        for d in /usr/share/icons/hicolor; do
+            if [ -d "$d" ] && command -v gtk-update-icon-cache >/dev/null 2>&1; then
+                gtk-update-icon-cache -f -q "$d" >/dev/null 2>&1 || true
+            fi
+        done
+        ;;
+esac
+
+exit 0

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=O-deskUI .wokk.
+GenericName=Ollama管理器WokK
+Comment=本地 Ollama 图形化管理工具：模型管理、流式聊天、生成、嵌入
+Exec=offideskollama
+Icon=offideskollama
+Type=Application
+Categories=Utility;Development;System;
+Keywords=ollama;llm;ai;model;chat;
+Terminal=false
+StartupNotify=true
+StartupWMClass=offideskollama

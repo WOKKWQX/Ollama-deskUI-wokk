@@ -1,0 +1,40 @@
+[package]
+name = "offideskollama"
+version = "3.6.2"
+edition = "2021"
+description = "offideskOllama — Ollama 图形化控制台（GTK4 原生版）"
+
+[dependencies]
+# 纯 GTK4 原生 UI（不依赖 libadwaita）。
+# 原因：libadwaita 的控件不跟随 Cinnamon / Mint-Y 系统主题，导致界面与桌面环境脱节；
+# 改用纯 GTK4 后，控件外观由系统 GTK 主题（Mint-Y 等）统一绘制，原生贴合桌面。
+# v4_6 启用 AlertDialog 等。
+gtk4 = { version = "0.8", features = ["v4_6"] }
+glib = "0.19"
+gio = "0.19"
+# 托盘图标像素图：从已安装的应用图标读取 RGBA，保证 SNI 在 Cinnamon 等环境始终有可见图标
+gdk-pixbuf = "0.19"
+
+# 网络与序列化（复用 ollama 核心）
+reqwest = { version = "0.12", features = ["json", "stream"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+futures-util = "0.3"
+
+# Markdown 渲染
+pulldown-cmark = "0.10"
+ksni = "0.3.6"
+# 时间解析（已加载模型的 keep_alive 到期时间倒计时）
+chrono = "0.4"
+# 卡死黑匣子：看门狗经 tgkill 向各线程发 SIGUSR2，处理器内抓 Rust 调用栈
+libc = "0.2"
+backtrace = "0.3"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+# v1.0.15：保留符号——卡死黑匣子的调用栈需要函数名才能定罪
+strip = false
+debug = "line-tables-only"

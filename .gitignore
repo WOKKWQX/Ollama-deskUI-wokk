@@ -1,0 +1,20 @@
+# Rust build artifacts
+/target/
+**/target/
+
+# Editor / OS
+*.swp
+*~
+.DS_Store
+
+# Local build output
+*.deb
+dist/
+node_modules/
+
+# Project-internal (not part of source)
+软件包正式版交付文件夹-所有格式/
+.workbuddy/
+
+# Logs
+*.log
