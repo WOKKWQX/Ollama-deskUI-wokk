@@ -1,0 +1,7853 @@
+[
+ {
+  "id": "qwen2.5:7b",
+  "name": "qwen2.5",
+  "display": "通义千问 2.5",
+  "desc": "阿里通义千问，中英文均衡，覆盖 0.5B~72B。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.7,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 41000000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5:0.5b",
+  "name": "qwen2.5",
+  "display": "通义千问 2.5（极速 0.5B）",
+  "desc": "千问最小档，老机器也能跑，适合尝鲜。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.4,
+  "ref_tag": "0.5b",
+  "origin": "manual",
+  "pulls": 41000000,
+  "params_billion": 0.5,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5-coder:7b",
+  "name": "qwen2.5-coder",
+  "display": "通义千问代码 2.5",
+  "desc": "代码专用，补全与改造能力强。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.7,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 21800000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5-coder:1.5b",
+  "name": "qwen2.5-coder",
+  "display": "通义千问代码 2.5（轻量 1.5B）",
+  "desc": "代码专用小档，补全够用、占用低。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 1.0,
+  "ref_tag": "1.5b",
+  "origin": "manual",
+  "pulls": 21800000,
+  "params_billion": 1.5,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5vl:7b",
+  "name": "qwen2.5vl",
+  "display": "通义千问视觉 2.5",
+  "desc": "读图多模态，支持图片问答与理解。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 6.0,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 5100000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5-math:7b",
+  "name": "qwen2.5-math",
+  "display": "通义千问数学 2.5",
+  "desc": "数学推理专用，解题步骤清晰。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.4,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": null,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3:8b",
+  "name": "qwen3",
+  "display": "通义千问 3",
+  "desc": "新一代千问，推理与对话兼顾。",
+  "caps": [
+   "chat",
+   "tool",
+   "reason"
+  ],
+  "chinese": true,
+  "ref_size_gb": 5.0,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 38000000,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-coder:30b",
+  "name": "qwen3-coder",
+  "display": "通义千问代码 3（30B）",
+  "desc": "第三代代码模型，代理式编程能力强，体积偏大。",
+  "caps": [
+   "code",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 19.0,
+  "ref_tag": "30b",
+  "origin": "manual",
+  "pulls": 9600000,
+  "params_billion": 30.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-vl:8b",
+  "name": "qwen3-vl",
+  "display": "通义千问视觉 3",
+  "desc": "第三代多模态，图文理解与文档识别更强。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 5.5,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 6300000,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwq:32b",
+  "name": "qwq",
+  "display": "通义千问 QwQ（推理）",
+  "desc": "千问推理专用，长链思考。",
+  "caps": [
+   "reason",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 20.0,
+  "ref_tag": "32b",
+  "origin": "manual",
+  "pulls": 2300000,
+  "params_billion": 32.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-r1:7b",
+  "name": "deepseek-r1",
+  "display": "深度求索 R1（推理）",
+  "desc": "强推理模型，擅长数学与逻辑推导。",
+  "caps": [
+   "reason",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.7,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 93200000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-llm:7b",
+  "name": "deepseek-llm",
+  "display": "深度求索 LLM",
+  "desc": "DeepSeek 通用基座，中英文均衡。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.7,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 1200000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-coder-v2:16b",
+  "name": "deepseek-coder-v2",
+  "display": "深度求索代码 V2",
+  "desc": "代码与补全专用，覆盖多种语言。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 8.9,
+  "ref_tag": "16b",
+  "origin": "manual",
+  "pulls": 3100000,
+  "params_billion": 16.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-v3:671b",
+  "name": "deepseek-v3",
+  "display": "深度求索 V3（671B 巨量）",
+  "desc": "旗舰级通用模型，体积巨大，普通机器跑不动。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 404.0,
+  "ref_tag": "671b",
+  "origin": "manual",
+  "pulls": 3800000,
+  "params_billion": 671.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "glm4:9b",
+  "name": "glm4",
+  "display": "智谱 GLM-4",
+  "desc": "智谱通用对话，中文表现优秀。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 5.5,
+  "ref_tag": "9b",
+  "origin": "manual",
+  "pulls": 1200000,
+  "params_billion": 9.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "glm-4v:9b",
+  "name": "glm-4v",
+  "display": "智谱 GLM-4V（视觉）",
+  "desc": "智谱多模态，支持图文理解。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 5.5,
+  "ref_tag": "9b",
+  "origin": "manual",
+  "pulls": null,
+  "params_billion": 9.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "yi:6b",
+  "name": "yi",
+  "display": "零一万物 Yi",
+  "desc": "01.AI 通用模型，中文友好。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 3.8,
+  "ref_tag": "6b",
+  "origin": "manual",
+  "pulls": 1500000,
+  "params_billion": 6.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "yi-coder:9b",
+  "name": "yi-coder",
+  "display": "零一万物 Yi-Coder",
+  "desc": "代码专用，长上下文补全。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 5.2,
+  "ref_tag": "9b",
+  "origin": "manual",
+  "pulls": 1100000,
+  "params_billion": 9.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "baichuan2:7b",
+  "name": "baichuan2",
+  "display": "百川 2",
+  "desc": "百川通用对话，中文优化。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.2,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": null,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "internlm2:7b",
+  "name": "internlm2",
+  "display": "书生·浦语 2",
+  "desc": "上海 AI Lab 通用模型，中文扎实。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.5,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 1000000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "codegeex4:9b",
+  "name": "codegeex4",
+  "display": "智谱 CodeGeeX4",
+  "desc": "代码生成专用，多语言覆盖。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 5.5,
+  "ref_tag": "9b",
+  "origin": "manual",
+  "pulls": 697400,
+  "params_billion": 9.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "minicpm-v:2.6",
+  "name": "minicpm-v",
+  "display": "面壁 MiniCPM-V（视觉）",
+  "desc": "超轻量多模态，手机级设备可跑。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.8,
+  "ref_tag": "2.6",
+  "origin": "manual",
+  "pulls": 5500000,
+  "params_billion": null,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "bge-m3:latest",
+  "name": "bge-m3",
+  "display": "BGE-M3（嵌入）",
+  "desc": "多语言向量模型，检索与知识库首选。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": true,
+  "ref_size_gb": 1.2,
+  "ref_tag": "latest",
+  "origin": "manual",
+  "pulls": 7000000,
+  "params_billion": null,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "bge-large:latest",
+  "name": "bge-large",
+  "display": "BGE-Large（嵌入）",
+  "desc": "经典中文检索嵌入，体积小。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.67,
+  "ref_tag": "latest",
+  "origin": "manual",
+  "pulls": 287200,
+  "params_billion": null,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3:4b",
+  "name": "qwen3",
+  "display": "通义千问 3（4B）",
+  "desc": "千问 3 轻量档，小显存也能吃推理与工具调用。",
+  "caps": [
+   "chat",
+   "tool",
+   "reason"
+  ],
+  "chinese": true,
+  "ref_size_gb": 2.6,
+  "ref_tag": "4b",
+  "origin": "manual",
+  "pulls": 38000000,
+  "params_billion": 4.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3:14b",
+  "name": "qwen3",
+  "display": "通义千问 3（14B）",
+  "desc": "千问 3 中档，较 8B 档质量跃升，16GB 级设备甜点。",
+  "caps": [
+   "chat",
+   "tool",
+   "reason"
+  ],
+  "chinese": true,
+  "ref_size_gb": 9.3,
+  "ref_tag": "14b",
+  "origin": "manual",
+  "pulls": 38000000,
+  "params_billion": 14.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3:30b-a3b",
+  "name": "qwen3",
+  "display": "通义千问 3（30B MoE）",
+  "desc": "总参数 30B 仅激活 3B，速度接近小模型、质量更高。",
+  "caps": [
+   "chat",
+   "tool",
+   "reason"
+  ],
+  "chinese": true,
+  "ref_size_gb": 19.0,
+  "ref_tag": "30b-a3b",
+  "origin": "manual",
+  "pulls": 38000000,
+  "params_billion": 30.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5:3b",
+  "name": "qwen2.5",
+  "display": "通义千问 2.5（3B）",
+  "desc": "千问 2.5 轻量档，笔记本级设备流畅对话。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 1.9,
+  "ref_tag": "3b",
+  "origin": "manual",
+  "pulls": 41000000,
+  "params_billion": 3.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5:14b",
+  "name": "qwen2.5",
+  "display": "通义千问 2.5（14B）",
+  "desc": "千问 2.5 中档，质量接近更大参数量模型。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 9.0,
+  "ref_tag": "14b",
+  "origin": "manual",
+  "pulls": 41000000,
+  "params_billion": 14.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5:32b",
+  "name": "qwen2.5",
+  "display": "通义千问 2.5（32B）",
+  "desc": "千问 2.5 大档，追求质量的上限选择。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 20.0,
+  "ref_tag": "32b",
+  "origin": "manual",
+  "pulls": 41000000,
+  "params_billion": 32.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2:7b",
+  "name": "qwen2",
+  "display": "通义千问 2（7B）",
+  "desc": "上一代千问，老设备与兼容场景备选。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.4,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 6200000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5-coder:3b",
+  "name": "qwen2.5-coder",
+  "display": "通义千问代码 2.5（3B）",
+  "desc": "代码轻量档，日常补全顺手、占用低。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 1.9,
+  "ref_tag": "3b",
+  "origin": "manual",
+  "pulls": 21800000,
+  "params_billion": 3.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5-coder:14b",
+  "name": "qwen2.5-coder",
+  "display": "通义千问代码 2.5（14B）",
+  "desc": "代码中档，整文件改写与仓库级理解更稳。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 9.0,
+  "ref_tag": "14b",
+  "origin": "manual",
+  "pulls": 21800000,
+  "params_billion": 14.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "codeqwen:7b",
+  "name": "codeqwen",
+  "display": "千问代码 CodeQwen",
+  "desc": "千问代码初代 7B，老牌补全选择。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.2,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 1100000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-r1:1.5b",
+  "name": "deepseek-r1",
+  "display": "深度求索 R1（1.5B 蒸馏）",
+  "desc": "最小推理档，老机器也能跑思维链。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": true,
+  "ref_size_gb": 1.1,
+  "ref_tag": "1.5b",
+  "origin": "manual",
+  "pulls": 93200000,
+  "params_billion": 1.5,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-r1:8b",
+  "name": "deepseek-r1",
+  "display": "深度求索 R1（8B 蒸馏）",
+  "desc": "Llama3.1 底蒸馏，8GB 显存推理入门首选。",
+  "caps": [
+   "reason",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.9,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 93200000,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-r1:14b",
+  "name": "deepseek-r1",
+  "display": "深度求索 R1（14B）",
+  "desc": "Qwen 底蒸馏，中档机器的推理甜点。",
+  "caps": [
+   "reason",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 9.0,
+  "ref_tag": "14b",
+  "origin": "manual",
+  "pulls": 93200000,
+  "params_billion": 14.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-r1:32b",
+  "name": "deepseek-r1",
+  "display": "深度求索 R1（32B）",
+  "desc": "Qwen 底蒸馏，大显存机器的推理主力。",
+  "caps": [
+   "reason",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 20.0,
+  "ref_tag": "32b",
+  "origin": "manual",
+  "pulls": 93200000,
+  "params_billion": 32.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-r1:70b",
+  "name": "deepseek-r1",
+  "display": "深度求索 R1（70B 蒸馏）",
+  "desc": "Llama 底蒸馏，顶级推理质量，需大显存或纯 CPU 慢跑。",
+  "caps": [
+   "reason",
+   "tool"
+  ],
+  "chinese": true,
+  "ref_size_gb": 40.0,
+  "ref_tag": "70b",
+  "origin": "manual",
+  "pulls": 93200000,
+  "params_billion": 70.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-coder:6.7b",
+  "name": "deepseek-coder",
+  "display": "深度求索代码 1.5",
+  "desc": "初代代码模型，老机器补全仍可用。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 3.8,
+  "ref_tag": "6.7b",
+  "origin": "manual",
+  "pulls": 4600000,
+  "params_billion": 6.7,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-v2:16b",
+  "name": "deepseek-v2",
+  "display": "深度求索 V2 Lite",
+  "desc": "MoE 架构轻量版，激活参数少、吞吐高。",
+  "caps": [
+   "chat",
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 8.9,
+  "ref_tag": "16b",
+  "origin": "manual",
+  "pulls": 1200000,
+  "params_billion": 16.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "yi:9b",
+  "name": "yi",
+  "display": "零一万物 Yi（9B）",
+  "desc": "Yi 中档，中英双语扎实。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 5.3,
+  "ref_tag": "9b",
+  "origin": "manual",
+  "pulls": 1500000,
+  "params_billion": 9.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "yi:34b",
+  "name": "yi",
+  "display": "零一万物 Yi（34B）",
+  "desc": "Yi 大档，长文本理解好，需大内存。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 20.0,
+  "ref_tag": "34b",
+  "origin": "manual",
+  "pulls": 1500000,
+  "params_billion": 34.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "baichuan2:13b",
+  "name": "baichuan2",
+  "display": "百川 2（13B）",
+  "desc": "百川中档，中文问答稳。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 7.4,
+  "ref_tag": "13b",
+  "origin": "manual",
+  "pulls": null,
+  "params_billion": 13.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "minicpm-v:8b",
+  "name": "minicpm-v",
+  "display": "面壁 MiniCPM-V 2.6",
+  "desc": "8B 级多模态，读图与 OCR 强、体积小。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 5.5,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 5500000,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3.1:8b",
+  "name": "llama3.1",
+  "display": "Meta Llama 3.1",
+  "desc": "Meta 主力通用模型，生态成熟。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.7,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 119900000,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3.2:3b",
+  "name": "llama3.2",
+  "display": "Meta Llama 3.2",
+  "desc": "轻量通用，1B/3B 适合边缘设备。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.0,
+  "ref_tag": "3b",
+  "origin": "manual",
+  "pulls": 84400000,
+  "params_billion": 3.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3.2:1b",
+  "name": "llama3.2",
+  "display": "Meta Llama 3.2（1B 极速）",
+  "desc": "Llama 最小档，极省资源。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.3,
+  "ref_tag": "1b",
+  "origin": "manual",
+  "pulls": 84400000,
+  "params_billion": 1.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3.2-vision:11b",
+  "name": "llama3.2-vision",
+  "display": "Meta Llama 3.2（视觉）",
+  "desc": "Llama 多模态，图片问答。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.0,
+  "ref_tag": "11b",
+  "origin": "manual",
+  "pulls": 5400000,
+  "params_billion": 11.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3.3:70b",
+  "name": "llama3.3",
+  "display": "Meta Llama 3.3",
+  "desc": "Llama 新一代，质量更高（体积大）。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 43.0,
+  "ref_tag": "70b",
+  "origin": "manual",
+  "pulls": 4200000,
+  "params_billion": 70.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama4:scout",
+  "name": "llama4",
+  "display": "Meta Llama 4 Scout",
+  "desc": "Llama 4 稀疏专家，多模态但体量巨大。",
+  "caps": [
+   "chat",
+   "tool",
+   "vision"
+  ],
+  "chinese": false,
+  "ref_size_gb": 67.0,
+  "ref_tag": "scout",
+  "origin": "manual",
+  "pulls": 1800000,
+  "params_billion": null,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma2:9b",
+  "name": "gemma2",
+  "display": "谷歌 Gemma 2",
+  "desc": "谷歌开放模型，2B/9B 均衡。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.4,
+  "ref_tag": "9b",
+  "origin": "manual",
+  "pulls": 33400000,
+  "params_billion": 9.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma2:2b",
+  "name": "gemma2",
+  "display": "谷歌 Gemma 2（2B）",
+  "desc": "Gemma 2 轻量档，占用低。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.6,
+  "ref_tag": "2b",
+  "origin": "manual",
+  "pulls": 33400000,
+  "params_billion": 2.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma3:4b",
+  "name": "gemma3",
+  "display": "谷歌 Gemma 3（4B）",
+  "desc": "Gemma 3 小档，原生多模态。",
+  "caps": [
+   "chat",
+   "vision"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.3,
+  "ref_tag": "4b",
+  "origin": "manual",
+  "pulls": 40700000,
+  "params_billion": 4.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma3:12b",
+  "name": "gemma3",
+  "display": "谷歌 Gemma 3（12B）",
+  "desc": "Gemma 3 中档，质量与体积平衡。",
+  "caps": [
+   "chat",
+   "vision"
+  ],
+  "chinese": false,
+  "ref_size_gb": 8.1,
+  "ref_tag": "12b",
+  "origin": "manual",
+  "pulls": 40700000,
+  "params_billion": 12.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma3:27b",
+  "name": "gemma3",
+  "display": "谷歌 Gemma 3（27B）",
+  "desc": "Gemma 3 大档，质量更高、需大显存。",
+  "caps": [
+   "chat",
+   "vision"
+  ],
+  "chinese": false,
+  "ref_size_gb": 17.0,
+  "ref_tag": "27b",
+  "origin": "manual",
+  "pulls": 40700000,
+  "params_billion": 27.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "phi4:14b",
+  "name": "phi4",
+  "display": "微软 Phi-4",
+  "desc": "微软小钢炮，质量超规格。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 9.0,
+  "ref_tag": "14b",
+  "origin": "manual",
+  "pulls": 7700000,
+  "params_billion": 14.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "phi4-mini:3.8b",
+  "name": "phi4-mini",
+  "display": "微软 Phi-4 Mini",
+  "desc": "Phi-4 轻量档，小体积强推理。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.5,
+  "ref_tag": "3.8b",
+  "origin": "manual",
+  "pulls": 1500000,
+  "params_billion": 3.8,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "phi3:mini",
+  "name": "phi3",
+  "display": "微软 Phi-3",
+  "desc": "轻量对话，mini 档极省资源。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.3,
+  "ref_tag": "mini",
+  "origin": "manual",
+  "pulls": 18200000,
+  "params_billion": null,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mistral:7b",
+  "name": "mistral",
+  "display": "Mistral 7B",
+  "desc": "经典开放权重通用模型。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.1,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 33700000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "ministral:8b",
+  "name": "ministral",
+  "display": "Mistral 小钢炮",
+  "desc": "Mistral 轻量高效档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.8,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": null,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mistral-nemo:12b",
+  "name": "mistral-nemo",
+  "display": "Mistral Nemo 12B",
+  "desc": "长上下文通用模型，多语言好。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.1,
+  "ref_tag": "12b",
+  "origin": "manual",
+  "pulls": 5700000,
+  "params_billion": 12.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mistral-small3.1:24b",
+  "name": "mistral-small3.1",
+  "display": "Mistral Small 3.1",
+  "desc": "中小体积强通用，工具调用佳。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 15.0,
+  "ref_tag": "24b",
+  "origin": "manual",
+  "pulls": 792400,
+  "params_billion": 24.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "devstral:24b",
+  "name": "devstral",
+  "display": "Mistral Devstral",
+  "desc": "面向代理式编程的代码模型。",
+  "caps": [
+   "code",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 14.0,
+  "ref_tag": "24b",
+  "origin": "manual",
+  "pulls": 1000000,
+  "params_billion": 24.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mixtral:8x7b",
+  "name": "mixtral",
+  "display": "Mixtral 8x7B",
+  "desc": "稀疏专家模型，质量高但体量大。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 26.0,
+  "ref_tag": "8x7b",
+  "origin": "manual",
+  "pulls": 2900000,
+  "params_billion": null,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "command-r:7b",
+  "name": "command-r",
+  "display": "Cohere Command-R",
+  "desc": "擅长检索增强与工具调用。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.7,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 1500000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "command-r-plus:104b",
+  "name": "command-r-plus",
+  "display": "Cohere Command-R+",
+  "desc": "Command 大档，检索增强更强。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 59.0,
+  "ref_tag": "104b",
+  "origin": "manual",
+  "pulls": 807900,
+  "params_billion": 104.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "codellama:7b",
+  "name": "codellama",
+  "display": "Code Llama",
+  "desc": "Meta 代码专用模型。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.8,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 6500000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "codegemma:7b",
+  "name": "codegemma",
+  "display": "谷歌 CodeGemma",
+  "desc": "代码补全与生成专用。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.0,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 3200000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "starcoder2:7b",
+  "name": "starcoder2",
+  "display": "StarCoder 2",
+  "desc": "代码补全与生成专用。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.2,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 3000000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3:8b",
+  "name": "granite3",
+  "display": "IBM Granite 3",
+  "desc": "IBM 企业级通用模型。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.7,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": null,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3.3:8b",
+  "name": "granite3.3",
+  "display": "IBM Granite 3.3",
+  "desc": "Granite 新版，推理与工具兼顾。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.9,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 1100000,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "falcon:7b",
+  "name": "falcon",
+  "display": "Falcon",
+  "desc": "TII 开放权重通用模型。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.5,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 1200000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "openchat:7b",
+  "name": "openchat",
+  "display": "OpenChat",
+  "desc": "微调对话模型，体验轻快。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.1,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 1400000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "zephyr:7b",
+  "name": "zephyr",
+  "display": "Zephyr 7B",
+  "desc": "DPO 微调对话模型，风格利落。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.1,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 1300000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "vicuna:7b",
+  "name": "vicuna",
+  "display": "Vicuna 7B",
+  "desc": "经典对话微调模型。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.8,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 1200000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "orca-mini:3b",
+  "name": "orca-mini",
+  "display": "Orca Mini",
+  "desc": "小体积对话，适合尝鲜。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.0,
+  "ref_tag": "3b",
+  "origin": "manual",
+  "pulls": 3100000,
+  "params_billion": 3.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "tinyllama:1b",
+  "name": "tinyllama",
+  "display": "TinyLlama",
+  "desc": "1B 级超小模型，极速。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.1,
+  "ref_tag": "1b",
+  "origin": "manual",
+  "pulls": 5800000,
+  "params_billion": 1.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "smollm2:1.7b",
+  "name": "smollm2",
+  "display": "SmolLM2（1.7B）",
+  "desc": "HuggingFace 小模型，小巧好用。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.8,
+  "ref_tag": "1.7b",
+  "origin": "manual",
+  "pulls": 4000000,
+  "params_billion": 1.7,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "smollm2:360m",
+  "name": "smollm2",
+  "display": "SmolLM2（360M 超轻）",
+  "desc": "超小体积，适合极限省资源。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.23,
+  "ref_tag": "360m",
+  "origin": "manual",
+  "pulls": 4000000,
+  "params_billion": 0.36,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "dolphin3:8b",
+  "name": "dolphin3",
+  "display": "Dolphin 3",
+  "desc": "无拘束微调模型，指令跟随好。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.9,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 4099999,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nemotron-mini:4b",
+  "name": "nemotron-mini",
+  "display": "NVIDIA Nemotron Mini",
+  "desc": "英伟达小模型，工具调用友好。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.7,
+  "ref_tag": "4b",
+  "origin": "manual",
+  "pulls": 718900,
+  "params_billion": 4.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llava:7b",
+  "name": "llava",
+  "display": "LLaVA（视觉）",
+  "desc": "早期多模态代表，图文问答。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.5,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 15000000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llava-llama3:8b",
+  "name": "llava-llama3",
+  "display": "LLaVA-Llama3（视觉）",
+  "desc": "基于 Llama3 的多模态，识图更准。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.5,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 2300000,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "moondream:1.8b",
+  "name": "moondream",
+  "display": "Moondream（视觉）",
+  "desc": "超轻量视觉模型，边缘设备可跑。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.7,
+  "ref_tag": "1.8b",
+  "origin": "manual",
+  "pulls": 1900000,
+  "params_billion": 1.8,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nomic-embed-text:latest",
+  "name": "nomic-embed-text",
+  "display": "Nomic 嵌入",
+  "desc": "经典文本向量模型。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.27,
+  "ref_tag": "latest",
+  "origin": "manual",
+  "pulls": 87200000,
+  "params_billion": null,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mxbai-embed-large:latest",
+  "name": "mxbai-embed-large",
+  "display": "MXBAi 嵌入（大）",
+  "desc": "高质量英文嵌入。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.67,
+  "ref_tag": "latest",
+  "origin": "manual",
+  "pulls": 15100000,
+  "params_billion": null,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "snowflake-arctic-embed:latest",
+  "name": "snowflake-arctic-embed",
+  "display": "Snowflake 嵌入",
+  "desc": "Snowflake 检索嵌入。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.33,
+  "ref_tag": "latest",
+  "origin": "manual",
+  "pulls": 3100000,
+  "params_billion": null,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "all-minilm:33m",
+  "name": "all-minilm",
+  "display": "All-MiniLM（嵌入）",
+  "desc": "极小嵌入模型，速度优先。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.05,
+  "ref_tag": "33m",
+  "origin": "manual",
+  "pulls": 3600000,
+  "params_billion": 0.033,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3.1:70b",
+  "name": "llama3.1",
+  "display": "Meta Llama 3.1（70B）",
+  "desc": "Llama 3.1 大档，多语言通用质量上限，需大显存。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 40.0,
+  "ref_tag": "70b",
+  "origin": "manual",
+  "pulls": 119900000,
+  "params_billion": 70.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma2:27b",
+  "name": "gemma2",
+  "display": "谷歌 Gemma 2（27B）",
+  "desc": "Gemma 2 大档，质量较 9B 档有明显跃升。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 16.0,
+  "ref_tag": "27b",
+  "origin": "manual",
+  "pulls": 33400000,
+  "params_billion": 27.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma3:1b",
+  "name": "gemma3",
+  "display": "谷歌 Gemma 3（1B）",
+  "desc": "Gemma 3 最小档，低配设备也能跑。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.8,
+  "ref_tag": "1b",
+  "origin": "manual",
+  "pulls": 40700000,
+  "params_billion": 1.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "phi4-mini-reasoning:3.8b",
+  "name": "phi4-mini-reasoning",
+  "display": "微软 Phi-4 Mini 推理",
+  "desc": "小体积数学推理，解题分步清晰。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.5,
+  "ref_tag": "3.8b",
+  "origin": "manual",
+  "pulls": 313900,
+  "params_billion": 3.8,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "phi4-reasoning:14b",
+  "name": "phi4-reasoning",
+  "display": "微软 Phi-4 推理",
+  "desc": "Phi-4 推理版，长链思考更严谨。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": false,
+  "ref_size_gb": 9.0,
+  "ref_tag": "14b",
+  "origin": "manual",
+  "pulls": 1700000,
+  "params_billion": 14.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "phi3.5:3.8b",
+  "name": "phi3.5",
+  "display": "微软 Phi-3.5",
+  "desc": "Phi-3 系小升级，多语言理解更好。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.2,
+  "ref_tag": "3.8b",
+  "origin": "manual",
+  "pulls": 1000000,
+  "params_billion": 3.8,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "codestral:22b",
+  "name": "codestral",
+  "display": "Mistral Codestral",
+  "desc": "代码主力档，80+ 编程语言补全。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 13.0,
+  "ref_tag": "22b",
+  "origin": "manual",
+  "pulls": 1300000,
+  "params_billion": 22.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "codellama:13b",
+  "name": "codellama",
+  "display": "Code Llama（13B）",
+  "desc": "代码中档，补全与解释均衡。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.4,
+  "ref_tag": "13b",
+  "origin": "manual",
+  "pulls": 6500000,
+  "params_billion": 13.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "codellama:34b",
+  "name": "codellama",
+  "display": "Code Llama（34B）",
+  "desc": "代码大档，质量更高、需大显存。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.0,
+  "ref_tag": "34b",
+  "origin": "manual",
+  "pulls": 6500000,
+  "params_billion": 34.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "starcoder2:3b",
+  "name": "starcoder2",
+  "display": "StarCoder 2（3B）",
+  "desc": "小档代码补全，占用极低。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.7,
+  "ref_tag": "3b",
+  "origin": "manual",
+  "pulls": 3000000,
+  "params_billion": 3.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "starcoder2:15b",
+  "name": "starcoder2",
+  "display": "StarCoder 2（15B）",
+  "desc": "代码大档，覆盖 600+ 语言。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 8.5,
+  "ref_tag": "15b",
+  "origin": "manual",
+  "pulls": 3000000,
+  "params_billion": 15.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite-code:8b",
+  "name": "granite-code",
+  "display": "IBM Granite Code",
+  "desc": "IBM 代码专用，许可宽松适合商用。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.6,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 1600000,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "aya-expanse:8b",
+  "name": "aya-expanse",
+  "display": "Cohere Aya Expanse",
+  "desc": "多语言对话强项，小语种表现突出。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.0,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 1000000,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "hermes3:8b",
+  "name": "hermes3",
+  "display": "Hermes 3",
+  "desc": "Nous 微调 Llama3.1，指令跟随更听话。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.7,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 1700000,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizardlm2:7b",
+  "name": "wizardlm2",
+  "display": "WizardLM 2（7B）",
+  "desc": "微软系微调，通用对话均衡。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.1,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 1200000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "solar:10.7b",
+  "name": "solar",
+  "display": "Upstage Solar",
+  "desc": "韩系 10.7B，效率与质量兼顾。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 6.1,
+  "ref_tag": "10.7b",
+  "origin": "manual",
+  "pulls": 977800,
+  "params_billion": 10.7,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "tinydolphin:1.1b",
+  "name": "tinydolphin",
+  "display": "Tiny Dolphin",
+  "desc": "1.1B 超小档，树莓派级设备可跑。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.8,
+  "ref_tag": "1.1b",
+  "origin": "manual",
+  "pulls": 733300,
+  "params_billion": 1.1,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "dolphin-llama3:8b",
+  "name": "dolphin-llama3",
+  "display": "Dolphin Llama3",
+  "desc": "无拘束微调 Llama3，角色扮演常用。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.7,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 2100000,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "sqlcoder:7b",
+  "name": "sqlcoder",
+  "display": "Defog SQLCoder",
+  "desc": "自然语言转 SQL 专用模型。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.4,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 1900000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "magicoder:7b",
+  "name": "magicoder",
+  "display": "Magicoder",
+  "desc": "合成数据训练的代码模型，学术出身。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.8,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 562200,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "stable-code:3b",
+  "name": "stable-code",
+  "display": "Stability Stable Code",
+  "desc": "3B 代码补全，占用极低。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.6,
+  "ref_tag": "3b",
+  "origin": "manual",
+  "pulls": 1100000,
+  "params_billion": 3.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "falcon3:7b",
+  "name": "falcon3",
+  "display": "TII Falcon 3",
+  "desc": "Falcon 新一代 7B，效率优先。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.5,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 2600000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "olmo2:7b",
+  "name": "olmo2",
+  "display": "AI2 OLMo 2",
+  "desc": "全开放数据与权重训练，学术可信度高。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.5,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 3800000,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "tulu3:8b",
+  "name": "tulu3",
+  "display": "AI2 Tülu 3",
+  "desc": "AI2 微调 Llama，指令跟随严谨。",
+  "caps": [
+   "chat",
+   "tool"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.9,
+  "ref_tag": "8b",
+  "origin": "manual",
+  "pulls": 402400,
+  "params_billion": 8.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "exaone3.5:7.8b",
+  "name": "exaone3.5",
+  "display": "LG Exaone 3.5",
+  "desc": "LG 出品，长上下文与推理兼顾。",
+  "caps": [
+   "chat",
+   "reason"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.7,
+  "ref_tag": "7.8b",
+  "origin": "manual",
+  "pulls": 565400,
+  "params_billion": 7.8,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "marco-o1:7b",
+  "name": "marco-o1",
+  "display": "阿里 Marco-O1",
+  "desc": "开放推理探索版，中英思维链。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.7,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 214900,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "openthinker:32b",
+  "name": "openthinker",
+  "display": "OpenThinker",
+  "desc": "开放推理模型，长思考链输出。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": false,
+  "ref_size_gb": 20.0,
+  "ref_tag": "32b",
+  "origin": "manual",
+  "pulls": 1200000,
+  "params_billion": 32.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llava-phi3:latest",
+  "name": "llava-phi3",
+  "display": "LLaVA-Phi3（视觉）",
+  "desc": "超轻多模态，2-3GB 即可识图。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.9,
+  "ref_tag": "latest",
+  "origin": "manual",
+  "pulls": 438600,
+  "params_billion": null,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3.2-vision:90b",
+  "name": "llama3.2-vision",
+  "display": "Meta Llama 3.2 视觉（90B）",
+  "desc": "Llama 视觉大档，识图质量最高档。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 55.0,
+  "ref_tag": "90b",
+  "origin": "manual",
+  "pulls": 5400000,
+  "params_billion": 90.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "paraphrase-multilingual:latest",
+  "name": "paraphrase-multilingual",
+  "display": "多语言句向量（嵌入）",
+  "desc": "句子级多语言向量，轻量检索可用。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.7,
+  "ref_tag": "latest",
+  "origin": "manual",
+  "pulls": 943300,
+  "params_billion": null,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mathstral:7b",
+  "name": "mathstral",
+  "display": "Mistral Mathstral",
+  "desc": "数学与理工专用，STEM 题更强。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.1,
+  "ref_tag": "7b",
+  "origin": "manual",
+  "pulls": 556100,
+  "params_billion": 7.0,
+  "size_source": "manual",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3.1:405b",
+  "name": "llama3.1",
+  "display": "Meta Llama 3.1（405B）",
+  "desc": "Meta Llama 3.1，对话，405B 档，约 243.07 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 243.07,
+  "ref_tag": "405b",
+  "pulls": 119900000,
+  "params_billion": 405.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-r1:671b",
+  "name": "deepseek-r1",
+  "display": "深度求索 R1（671B）",
+  "desc": "深度求索 R1，推理，671B 档，约 404.43 GB。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": true,
+  "ref_size_gb": 404.43,
+  "ref_tag": "671b",
+  "pulls": 93200000,
+  "params_billion": 671.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nomic-embed-text:137m-v1.5-fp16",
+  "name": "nomic-embed-text",
+  "display": "Nomic（137M）",
+  "desc": "Nomic，向量检索，137M 档，约 0.27 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.27,
+  "ref_tag": "137m-v1.5-fp16",
+  "pulls": 87200000,
+  "params_billion": 0.137,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5:1.5b",
+  "name": "qwen2.5",
+  "display": "通义千问 2.5（1.5B）",
+  "desc": "通义千问 2.5，对话，1.5B 档，约 0.99 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.99,
+  "ref_tag": "1.5b",
+  "pulls": 41000000,
+  "params_billion": 1.5,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5:72b",
+  "name": "qwen2.5",
+  "display": "通义千问 2.5（72B）",
+  "desc": "通义千问 2.5，对话，72B 档，约 47.42 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 47.42,
+  "ref_tag": "72b",
+  "pulls": 41000000,
+  "params_billion": 72.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma3:270m",
+  "name": "gemma3",
+  "display": "谷歌 Gemma 3（270M）",
+  "desc": "谷歌 Gemma 3，对话，270M 档，约 0.29 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.29,
+  "ref_tag": "270m",
+  "pulls": 40700000,
+  "params_billion": 0.27,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3:0.6b",
+  "name": "qwen3",
+  "display": "通义千问 3（600M）",
+  "desc": "通义千问 3，对话，600M 档，约 0.52 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.52,
+  "ref_tag": "0.6b",
+  "pulls": 38000000,
+  "params_billion": 0.6,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3:1.7b",
+  "name": "qwen3",
+  "display": "通义千问 3（1.7B）",
+  "desc": "通义千问 3，对话，1.7B 档，约 1.36 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 1.36,
+  "ref_tag": "1.7b",
+  "pulls": 38000000,
+  "params_billion": 1.7,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3:30b",
+  "name": "qwen3",
+  "display": "通义千问 3（30B）",
+  "desc": "通义千问 3，对话，30B 档，约 18.56 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 18.56,
+  "ref_tag": "30b",
+  "pulls": 38000000,
+  "params_billion": 30.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3:32b",
+  "name": "qwen3",
+  "display": "通义千问 3（32B）",
+  "desc": "通义千问 3，对话，32B 档，约 20.2 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 20.2,
+  "ref_tag": "32b",
+  "pulls": 38000000,
+  "params_billion": 32.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3:235b",
+  "name": "qwen3",
+  "display": "通义千问 3（235B）",
+  "desc": "通义千问 3，对话，235B 档，约 142.15 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 142.15,
+  "ref_tag": "235b",
+  "pulls": 38000000,
+  "params_billion": 235.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma4:12b",
+  "name": "gemma4",
+  "display": "谷歌 Gemma（12B）",
+  "desc": "谷歌 Gemma，对话，12B 档，约 7.56 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.56,
+  "ref_tag": "12b",
+  "pulls": 25800000,
+  "params_billion": 12.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma4:26b",
+  "name": "gemma4",
+  "display": "谷歌 Gemma（26B）",
+  "desc": "谷歌 Gemma，对话，26B 档，约 18.6 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 18.6,
+  "ref_tag": "26b",
+  "pulls": 25800000,
+  "params_billion": 26.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma4:31b",
+  "name": "gemma4",
+  "display": "谷歌 Gemma（31B）",
+  "desc": "谷歌 Gemma，对话，31B 档，约 19.87 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.87,
+  "ref_tag": "31b",
+  "pulls": 25800000,
+  "params_billion": 31.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3:8b",
+  "name": "llama3",
+  "display": "Meta Llama（8B）",
+  "desc": "Meta Llama，对话，8B 档，约 4.66 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.66,
+  "ref_tag": "8b",
+  "pulls": 25300000,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3:70b",
+  "name": "llama3",
+  "display": "Meta Llama（70B）",
+  "desc": "Meta Llama，对话，70B 档，约 39.97 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 39.97,
+  "ref_tag": "70b",
+  "pulls": 25300000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5-coder:0.5b",
+  "name": "qwen2.5-coder",
+  "display": "通义千问 2.5（500M）",
+  "desc": "通义千问 2.5，代码，500M 档，约 0.4 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.4,
+  "ref_tag": "0.5b",
+  "pulls": 21800000,
+  "params_billion": 0.5,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5-coder:32b",
+  "name": "qwen2.5-coder",
+  "display": "通义千问 2.5（32B）",
+  "desc": "通义千问 2.5，代码，32B 档，约 19.85 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 19.85,
+  "ref_tag": "32b",
+  "pulls": 21800000,
+  "params_billion": 32.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3.5:0.8b",
+  "name": "qwen3.5",
+  "display": "通义千问 3（800M）",
+  "desc": "通义千问 3，对话，800M 档，约 1.04 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 1.04,
+  "ref_tag": "0.8b",
+  "pulls": 21000000,
+  "params_billion": 0.8,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3.5:2b",
+  "name": "qwen3.5",
+  "display": "通义千问 3（2B）",
+  "desc": "通义千问 3，对话，2B 档，约 2.74 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 2.74,
+  "ref_tag": "2b",
+  "pulls": 21000000,
+  "params_billion": 2.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3.5:4b",
+  "name": "qwen3.5",
+  "display": "通义千问 3（4B）",
+  "desc": "通义千问 3，对话，4B 档，约 3.39 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 3.39,
+  "ref_tag": "4b",
+  "pulls": 21000000,
+  "params_billion": 4.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3.5:9b",
+  "name": "qwen3.5",
+  "display": "通义千问 3（9B）",
+  "desc": "通义千问 3，对话，9B 档，约 6.59 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 6.59,
+  "ref_tag": "9b",
+  "pulls": 21000000,
+  "params_billion": 9.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3.5:27b",
+  "name": "qwen3.5",
+  "display": "通义千问 3（27B）",
+  "desc": "通义千问 3，对话，27B 档，约 17.42 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 17.42,
+  "ref_tag": "27b",
+  "pulls": 21000000,
+  "params_billion": 27.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3.5:35b",
+  "name": "qwen3.5",
+  "display": "通义千问 3（35B）",
+  "desc": "通义千问 3，对话，35B 档，约 23.87 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 23.87,
+  "ref_tag": "35b",
+  "pulls": 21000000,
+  "params_billion": 35.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3.5:122b",
+  "name": "qwen3.5",
+  "display": "通义千问 3（122B）",
+  "desc": "通义千问 3，对话，122B 档，约 81.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 81.37,
+  "ref_tag": "122b",
+  "pulls": 21000000,
+  "params_billion": 122.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "phi3:3.8b",
+  "name": "phi3",
+  "display": "微软 Phi-3（3.8B）",
+  "desc": "微软 Phi-3，对话，3.8B 档，约 2.18 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.18,
+  "ref_tag": "3.8b",
+  "pulls": 18200000,
+  "params_billion": 3.8,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "phi3:14b",
+  "name": "phi3",
+  "display": "微软 Phi-3（14B）",
+  "desc": "微软 Phi-3，对话，14B 档，约 7.9 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.9,
+  "ref_tag": "14b",
+  "pulls": 18200000,
+  "params_billion": 14.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mxbai-embed-large:335m",
+  "name": "mxbai-embed-large",
+  "display": "MXBAi（335M）",
+  "desc": "MXBAi，向量检索，335M 档，约 0.67 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.67,
+  "ref_tag": "335m",
+  "pulls": 15100000,
+  "params_billion": 0.335,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llava:13b",
+  "name": "llava",
+  "display": "LLaVA（13B）",
+  "desc": "LLaVA，视觉理解、对话，13B 档，约 8.01 GB。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 8.01,
+  "ref_tag": "13b",
+  "pulls": 15000000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llava:34b",
+  "name": "llava",
+  "display": "LLaVA（34B）",
+  "desc": "LLaVA，视觉理解、对话，34B 档，约 20.17 GB。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 20.17,
+  "ref_tag": "34b",
+  "pulls": 15000000,
+  "params_billion": 34.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gpt-oss:20b",
+  "name": "gpt-oss",
+  "display": "gpt-oss（20B）",
+  "desc": "gpt-oss，对话，20B 档，约 13.79 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 13.79,
+  "ref_tag": "20b",
+  "pulls": 13200000,
+  "params_billion": 20.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gpt-oss:120b",
+  "name": "gpt-oss",
+  "display": "gpt-oss（120B）",
+  "desc": "gpt-oss，对话，120B 档，约 65.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 65.37,
+  "ref_tag": "120b",
+  "pulls": 13200000,
+  "params_billion": 120.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-coder:480b",
+  "name": "qwen3-coder",
+  "display": "通义千问 3（480B）",
+  "desc": "通义千问 3，代码，480B 档，约 290.06 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 290.06,
+  "ref_tag": "480b",
+  "pulls": 9600000,
+  "params_billion": 480.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma:2b",
+  "name": "gemma",
+  "display": "谷歌 Gemma（2B）",
+  "desc": "谷歌 Gemma，对话，2B 档，约 1.68 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.68,
+  "ref_tag": "2b",
+  "pulls": 8300000,
+  "params_billion": 2.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma:7b",
+  "name": "gemma",
+  "display": "谷歌 Gemma（7B）",
+  "desc": "谷歌 Gemma，对话，7B 档，约 5.01 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.01,
+  "ref_tag": "7b",
+  "pulls": 8300000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen:0.5b",
+  "name": "qwen",
+  "display": "通义千问（500M）",
+  "desc": "通义千问，对话，500M 档，约 0.39 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.39,
+  "ref_tag": "0.5b",
+  "pulls": 7900000,
+  "params_billion": 0.5,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen:1.8b",
+  "name": "qwen",
+  "display": "通义千问（1.8B）",
+  "desc": "通义千问，对话，1.8B 档，约 1.12 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 1.12,
+  "ref_tag": "1.8b",
+  "pulls": 7900000,
+  "params_billion": 1.8,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen:4b",
+  "name": "qwen",
+  "display": "通义千问（4B）",
+  "desc": "通义千问，对话，4B 档，约 2.33 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 2.33,
+  "ref_tag": "4b",
+  "pulls": 7900000,
+  "params_billion": 4.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen:7b",
+  "name": "qwen",
+  "display": "通义千问（7B）",
+  "desc": "通义千问，对话，7B 档，约 4.51 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.51,
+  "ref_tag": "7b",
+  "pulls": 7900000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen:14b",
+  "name": "qwen",
+  "display": "通义千问（14B）",
+  "desc": "通义千问，对话，14B 档，约 8.18 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 8.18,
+  "ref_tag": "14b",
+  "pulls": 7900000,
+  "params_billion": 14.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen:32b",
+  "name": "qwen",
+  "display": "通义千问（32B）",
+  "desc": "通义千问，对话，32B 档，约 18.5 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 18.5,
+  "ref_tag": "32b",
+  "pulls": 7900000,
+  "params_billion": 32.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen:72b",
+  "name": "qwen",
+  "display": "通义千问（72B）",
+  "desc": "通义千问，对话，72B 档，约 41 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 41.0,
+  "ref_tag": "72b",
+  "pulls": 7900000,
+  "params_billion": 72.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen:110b",
+  "name": "qwen",
+  "display": "通义千问（110B）",
+  "desc": "通义千问，对话，110B 档，约 62.89 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 62.89,
+  "ref_tag": "110b",
+  "pulls": 7900000,
+  "params_billion": 110.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "glm-ocr:latest",
+  "name": "glm-ocr",
+  "display": "智谱 GLM（latest）",
+  "desc": "智谱 GLM，对话，latest 档，约 2.22 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 2.22,
+  "ref_tag": "latest",
+  "pulls": 7600000,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama2:7b",
+  "name": "llama2",
+  "display": "Meta Llama（7B）",
+  "desc": "Meta Llama，对话，7B 档，约 3.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b",
+  "pulls": 7500000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama2:13b",
+  "name": "llama2",
+  "display": "Meta Llama（13B）",
+  "desc": "Meta Llama，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 7500000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama2:70b",
+  "name": "llama2",
+  "display": "Meta Llama（70B）",
+  "desc": "Meta Llama，对话，70B 档，约 38.87 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 38.87,
+  "ref_tag": "70b",
+  "pulls": 7500000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "bge-m3:567m",
+  "name": "bge-m3",
+  "display": "BGE（567M）",
+  "desc": "BGE，向量检索，567M 档，约 1.16 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": true,
+  "ref_size_gb": 1.16,
+  "ref_tag": "567m",
+  "pulls": 7000000,
+  "params_billion": 0.567,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3.6:27b",
+  "name": "qwen3.6",
+  "display": "通义千问 3（27B）",
+  "desc": "通义千问 3，对话，27B 档，约 17.77 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 17.77,
+  "ref_tag": "27b",
+  "pulls": 6800000,
+  "params_billion": 27.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3.6:35b",
+  "name": "qwen3.6",
+  "display": "通义千问 3（35B）",
+  "desc": "通义千问 3，对话，35B 档，约 22.62 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 22.62,
+  "ref_tag": "35b",
+  "pulls": 6800000,
+  "params_billion": 35.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "codellama:70b",
+  "name": "codellama",
+  "display": "Code Llama（70B）",
+  "desc": "Code Llama，代码，70B 档，约 38.87 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 38.87,
+  "ref_tag": "70b",
+  "pulls": 6500000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-vl:2b",
+  "name": "qwen3-vl",
+  "display": "通义千问视觉 3（2B）",
+  "desc": "通义千问视觉 3，视觉理解、对话，2B 档，约 1.89 GB。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 1.89,
+  "ref_tag": "2b",
+  "pulls": 6300000,
+  "params_billion": 2.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-vl:4b",
+  "name": "qwen3-vl",
+  "display": "通义千问视觉 3（4B）",
+  "desc": "通义千问视觉 3，视觉理解、对话，4B 档，约 3.3 GB。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 3.3,
+  "ref_tag": "4b",
+  "pulls": 6300000,
+  "params_billion": 4.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-vl:30b",
+  "name": "qwen3-vl",
+  "display": "通义千问视觉 3（30B）",
+  "desc": "通义千问视觉 3，视觉理解、对话，30B 档，约 19.6 GB。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 19.6,
+  "ref_tag": "30b",
+  "pulls": 6300000,
+  "params_billion": 30.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-vl:32b",
+  "name": "qwen3-vl",
+  "display": "通义千问视觉 3（32B）",
+  "desc": "通义千问视觉 3，视觉理解、对话，32B 档，约 20.91 GB。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 20.91,
+  "ref_tag": "32b",
+  "pulls": 6300000,
+  "params_billion": 32.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-vl:235b",
+  "name": "qwen3-vl",
+  "display": "通义千问视觉 3（235B）",
+  "desc": "通义千问视觉 3，视觉理解、对话，235B 档，约 143.27 GB。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 143.27,
+  "ref_tag": "235b",
+  "pulls": 6300000,
+  "params_billion": 235.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2:0.5b",
+  "name": "qwen2",
+  "display": "通义千问 2（500M）",
+  "desc": "通义千问 2，对话，500M 档，约 0.35 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.35,
+  "ref_tag": "0.5b",
+  "pulls": 6200000,
+  "params_billion": 0.5,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2:1.5b",
+  "name": "qwen2",
+  "display": "通义千问 2（1.5B）",
+  "desc": "通义千问 2，对话，1.5B 档，约 0.93 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.93,
+  "ref_tag": "1.5b",
+  "pulls": 6200000,
+  "params_billion": 1.5,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2:72b",
+  "name": "qwen2",
+  "display": "通义千问 2（72B）",
+  "desc": "通义千问 2，对话，72B 档，约 41.23 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 41.23,
+  "ref_tag": "72b",
+  "pulls": 6200000,
+  "params_billion": 72.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "tinyllama:1.1b",
+  "name": "tinyllama",
+  "display": "TinyLlama（1.1B）",
+  "desc": "TinyLlama，对话，1.1B 档，约 0.64 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.64,
+  "ref_tag": "1.1b",
+  "pulls": 5800000,
+  "params_billion": 1.1,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5vl:3b",
+  "name": "qwen2.5vl",
+  "display": "通义千问视觉 2.5（3B）",
+  "desc": "通义千问视觉 2.5，对话，3B 档，约 3.2 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 3.2,
+  "ref_tag": "3b",
+  "pulls": 5100000,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5vl:32b",
+  "name": "qwen2.5vl",
+  "display": "通义千问视觉 2.5（32B）",
+  "desc": "通义千问视觉 2.5，对话，32B 档，约 21.16 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 21.16,
+  "ref_tag": "32b",
+  "pulls": 5100000,
+  "params_billion": 32.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2.5vl:72b",
+  "name": "qwen2.5vl",
+  "display": "通义千问视觉 2.5（72B）",
+  "desc": "通义千问视觉 2.5，对话，72B 档，约 48.71 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 48.71,
+  "ref_tag": "72b",
+  "pulls": 5100000,
+  "params_billion": 72.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-coder:1.3b",
+  "name": "deepseek-coder",
+  "display": "深度求索代码（1.3B）",
+  "desc": "深度求索代码，代码，1.3B 档，约 0.78 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.78,
+  "ref_tag": "1.3b",
+  "pulls": 4600000,
+  "params_billion": 1.3,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-coder:33b",
+  "name": "deepseek-coder",
+  "display": "深度求索代码（33B）",
+  "desc": "深度求索代码，代码，33B 档，约 18.82 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 18.82,
+  "ref_tag": "33b",
+  "pulls": 4600000,
+  "params_billion": 33.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-embedding:0.6b",
+  "name": "qwen3-embedding",
+  "display": "通义千问 3（600M）",
+  "desc": "通义千问 3，向量检索，600M 档，约 0.64 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.64,
+  "ref_tag": "0.6b",
+  "pulls": 4099999,
+  "params_billion": 0.6,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-embedding:4b",
+  "name": "qwen3-embedding",
+  "display": "通义千问 3（4B）",
+  "desc": "通义千问 3，向量检索，4B 档，约 2.5 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": true,
+  "ref_size_gb": 2.5,
+  "ref_tag": "4b",
+  "pulls": 4099999,
+  "params_billion": 4.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-embedding:8b",
+  "name": "qwen3-embedding",
+  "display": "通义千问 3（8B）",
+  "desc": "通义千问 3，向量检索，8B 档，约 4.68 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.68,
+  "ref_tag": "8b",
+  "pulls": 4099999,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "smollm2:135m",
+  "name": "smollm2",
+  "display": "SmolLM2（135M）",
+  "desc": "SmolLM2，对话，135M 档，约 0.27 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.27,
+  "ref_tag": "135m",
+  "pulls": 4000000,
+  "params_billion": 0.135,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "olmo2:13b",
+  "name": "olmo2",
+  "display": "AI2 OLMo（13B）",
+  "desc": "AI2 OLMo，对话，13B 档，约 8.35 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 8.35,
+  "ref_tag": "13b",
+  "pulls": 3800000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "all-minilm:22m",
+  "name": "all-minilm",
+  "display": "All-MiniLM（22M）",
+  "desc": "All-MiniLM，向量检索，22M 档，约 0.05 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.05,
+  "ref_tag": "22m",
+  "pulls": 3600000,
+  "params_billion": 0.022,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "codegemma:2b",
+  "name": "codegemma",
+  "display": "谷歌 CodeGemma（2B）",
+  "desc": "谷歌 CodeGemma，代码，2B 档，约 1.55 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.55,
+  "ref_tag": "2b",
+  "pulls": 3200000,
+  "params_billion": 2.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-coder-v2:236b",
+  "name": "deepseek-coder-v2",
+  "display": "深度求索代码（236B）",
+  "desc": "深度求索代码，代码，236B 档，约 132.91 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 132.91,
+  "ref_tag": "236b",
+  "pulls": 3100000,
+  "params_billion": 236.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mistral-small:22b",
+  "name": "mistral-small",
+  "display": "Mistral Small（22B）",
+  "desc": "Mistral Small，对话，22B 档，约 12.57 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 12.57,
+  "ref_tag": "22b",
+  "pulls": 3100000,
+  "params_billion": 22.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mistral-small:24b",
+  "name": "mistral-small",
+  "display": "Mistral Small（24B）",
+  "desc": "Mistral Small，对话，24B 档，约 14.33 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 14.33,
+  "ref_tag": "24b",
+  "pulls": 3100000,
+  "params_billion": 24.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "orca-mini:7b",
+  "name": "orca-mini",
+  "display": "Orca（7B）",
+  "desc": "Orca，对话，7B 档，约 3.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b",
+  "pulls": 3100000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "orca-mini:13b",
+  "name": "orca-mini",
+  "display": "Orca（13B）",
+  "desc": "Orca，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 3100000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "orca-mini:70b",
+  "name": "orca-mini",
+  "display": "Orca（70B）",
+  "desc": "Orca，对话，70B 档，约 38.87 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 38.87,
+  "ref_tag": "70b",
+  "pulls": 3100000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "snowflake-arctic-embed:22m",
+  "name": "snowflake-arctic-embed",
+  "display": "Snowflake（22M）",
+  "desc": "Snowflake，向量检索，22M 档，约 0.05 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.05,
+  "ref_tag": "22m",
+  "pulls": 3100000,
+  "params_billion": 0.022,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "snowflake-arctic-embed:33m",
+  "name": "snowflake-arctic-embed",
+  "display": "Snowflake（33M）",
+  "desc": "Snowflake，向量检索，33M 档，约 0.07 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.07,
+  "ref_tag": "33m",
+  "pulls": 3100000,
+  "params_billion": 0.033,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "snowflake-arctic-embed:110m",
+  "name": "snowflake-arctic-embed",
+  "display": "Snowflake（110M）",
+  "desc": "Snowflake，向量检索，110M 档，约 0.22 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.22,
+  "ref_tag": "110m",
+  "pulls": 3100000,
+  "params_billion": 0.11,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "snowflake-arctic-embed:137m",
+  "name": "snowflake-arctic-embed",
+  "display": "Snowflake（137M）",
+  "desc": "Snowflake，向量检索，137M 档，约 0.27 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.27,
+  "ref_tag": "137m",
+  "pulls": 3100000,
+  "params_billion": 0.137,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "snowflake-arctic-embed:335m",
+  "name": "snowflake-arctic-embed",
+  "display": "Snowflake（335M）",
+  "desc": "Snowflake，向量检索，335M 档，约 0.67 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.67,
+  "ref_tag": "335m",
+  "pulls": 3100000,
+  "params_billion": 0.335,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3.1-moe:1b",
+  "name": "granite3.1-moe",
+  "display": "IBM Granite 3（1B）",
+  "desc": "IBM Granite 3，对话，1B 档，约 1.42 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.42,
+  "ref_tag": "1b",
+  "pulls": 3000000,
+  "params_billion": 1.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3.1-moe:3b",
+  "name": "granite3.1-moe",
+  "display": "IBM Granite 3（3B）",
+  "desc": "IBM Granite 3，对话，3B 档，约 2.04 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.04,
+  "ref_tag": "3b",
+  "pulls": 3000000,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nemotron-3-super:120b",
+  "name": "nemotron-3-super",
+  "display": "NVIDIA Nemotron（120B）",
+  "desc": "NVIDIA Nemotron，对话，120B 档，约 86.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 86.83,
+  "ref_tag": "120b",
+  "pulls": 3000000,
+  "params_billion": 120.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mixtral:latest",
+  "name": "mixtral",
+  "display": "Mixtral（latest）",
+  "desc": "Mixtral，对话，latest 档，约 26.44 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 26.44,
+  "ref_tag": "latest",
+  "pulls": 2900000,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama2-uncensored:7b",
+  "name": "llama2-uncensored",
+  "display": "Meta Llama（7B）",
+  "desc": "Meta Llama，对话，7B 档，约 3.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b",
+  "pulls": 2700000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama2-uncensored:70b",
+  "name": "llama2-uncensored",
+  "display": "Meta Llama（70B）",
+  "desc": "Meta Llama，对话，70B 档，约 38.87 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 38.87,
+  "ref_tag": "70b",
+  "pulls": 2700000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "falcon3:1b",
+  "name": "falcon3",
+  "display": "TII Falcon 3（1B）",
+  "desc": "TII Falcon 3，对话，1B 档，约 1.78 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.78,
+  "ref_tag": "1b",
+  "pulls": 2600000,
+  "params_billion": 1.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "falcon3:3b",
+  "name": "falcon3",
+  "display": "TII Falcon 3（3B）",
+  "desc": "TII Falcon 3，对话，3B 档，约 2.01 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.01,
+  "ref_tag": "3b",
+  "pulls": 2600000,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "falcon3:10b",
+  "name": "falcon3",
+  "display": "TII Falcon 3（10B）",
+  "desc": "TII Falcon 3，对话，10B 档，约 6.29 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 6.29,
+  "ref_tag": "10b",
+  "pulls": 2600000,
+  "params_billion": 10.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3.8:27b",
+  "name": "qwen3.8",
+  "display": "通义千问 3（27B）",
+  "desc": "通义千问 3，对话，27B 档，约 17.74 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 17.74,
+  "ref_tag": "27b",
+  "pulls": 2600000,
+  "params_billion": 27.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mistral-small3.2:24b",
+  "name": "mistral-small3.2",
+  "display": "Mistral Small（24B）",
+  "desc": "Mistral Small，对话，24B 档，约 15.18 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 15.18,
+  "ref_tag": "24b",
+  "pulls": 2500000,
+  "params_billion": 24.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "minimax-m2.7:cloud",
+  "name": "minimax-m2.7",
+  "display": "minimax-m2.7（cloud）",
+  "desc": "minimax-m2.7，对话，cloud 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.0,
+  "ref_tag": "cloud",
+  "pulls": 2400000,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "translategemma:4b",
+  "name": "translategemma",
+  "display": "translategemma（4B）",
+  "desc": "translategemma，对话，4B 档，约 3.3 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.3,
+  "ref_tag": "4b",
+  "pulls": 2400000,
+  "params_billion": 4.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "translategemma:12b",
+  "name": "translategemma",
+  "display": "translategemma（12B）",
+  "desc": "translategemma，对话，12B 档，约 8.11 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 8.11,
+  "ref_tag": "12b",
+  "pulls": 2400000,
+  "params_billion": 12.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "translategemma:27b",
+  "name": "translategemma",
+  "display": "translategemma（27B）",
+  "desc": "translategemma，对话，27B 档，约 17.36 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 17.36,
+  "ref_tag": "27b",
+  "pulls": 2400000,
+  "params_billion": 27.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "embeddinggemma:300m",
+  "name": "embeddinggemma",
+  "display": "embeddinggemma（300M）",
+  "desc": "embeddinggemma，向量检索，300M 档，约 0.62 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.62,
+  "ref_tag": "300m",
+  "pulls": 2200000,
+  "params_billion": 0.3,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gemma3n:latest",
+  "name": "gemma3n",
+  "display": "谷歌 Gemma 3（latest）",
+  "desc": "谷歌 Gemma 3，对话，latest 档，约 7.55 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.55,
+  "ref_tag": "latest",
+  "pulls": 2200000,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "smollm:135m",
+  "name": "smollm",
+  "display": "SmolLM（135M）",
+  "desc": "SmolLM，对话，135M 档，约 0.09 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.09,
+  "ref_tag": "135m",
+  "pulls": 2200000,
+  "params_billion": 0.135,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "smollm:360m",
+  "name": "smollm",
+  "display": "SmolLM（360M）",
+  "desc": "SmolLM，对话，360M 档，约 0.23 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.23,
+  "ref_tag": "360m",
+  "pulls": 2200000,
+  "params_billion": 0.36,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "smollm:1.7b",
+  "name": "smollm",
+  "display": "SmolLM（1.7B）",
+  "desc": "SmolLM，对话，1.7B 档，约 0.99 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.99,
+  "ref_tag": "1.7b",
+  "pulls": 2200000,
+  "params_billion": 1.7,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "cogito:3b",
+  "name": "cogito",
+  "display": "cogito（3B）",
+  "desc": "cogito，对话，3B 档，约 2.24 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.24,
+  "ref_tag": "3b",
+  "pulls": 2100000,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "cogito:8b",
+  "name": "cogito",
+  "display": "cogito（8B）",
+  "desc": "cogito，对话，8B 档，约 4.92 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.92,
+  "ref_tag": "8b",
+  "pulls": 2100000,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "cogito:14b",
+  "name": "cogito",
+  "display": "cogito（14B）",
+  "desc": "cogito，对话，14B 档，约 8.99 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 8.99,
+  "ref_tag": "14b",
+  "pulls": 2100000,
+  "params_billion": 14.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "cogito:32b",
+  "name": "cogito",
+  "display": "cogito（32B）",
+  "desc": "cogito，对话，32B 档，约 19.85 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.85,
+  "ref_tag": "32b",
+  "pulls": 2100000,
+  "params_billion": 32.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "cogito:70b",
+  "name": "cogito",
+  "display": "cogito（70B）",
+  "desc": "cogito，对话，70B 档，约 42.52 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 42.52,
+  "ref_tag": "70b",
+  "pulls": 2100000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "dolphin-llama3:70b",
+  "name": "dolphin-llama3",
+  "display": "Dolphin Llama3（70B）",
+  "desc": "Dolphin Llama3，对话，70B 档，约 39.97 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 39.97,
+  "ref_tag": "70b",
+  "pulls": 2100000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "glm-4.7-flash:latest",
+  "name": "glm-4.7-flash",
+  "display": "智谱 GLM（latest）",
+  "desc": "智谱 GLM，对话，latest 档，约 19.02 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 19.02,
+  "ref_tag": "latest",
+  "pulls": 2000000,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-coder-next:latest",
+  "name": "qwen3-coder-next",
+  "display": "通义千问 3（latest）",
+  "desc": "通义千问 3，代码，latest 档，约 51.74 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 51.74,
+  "ref_tag": "latest",
+  "pulls": 2000000,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "dolphin-mixtral:latest",
+  "name": "dolphin-mixtral",
+  "display": "Dolphin（latest）",
+  "desc": "Dolphin，对话，latest 档，约 26.44 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 26.44,
+  "ref_tag": "latest",
+  "pulls": 1900000,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "sqlcoder:15b",
+  "name": "sqlcoder",
+  "display": "SQLCoder（15B）",
+  "desc": "SQLCoder，代码，15B 档，约 8.99 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 8.99,
+  "ref_tag": "15b",
+  "pulls": 1900000,
+  "params_billion": 15.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "sqlcoder:70b-alpha-fp16",
+  "name": "sqlcoder",
+  "display": "SQLCoder（70B）",
+  "desc": "SQLCoder，代码，70B 档，约 137.96 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 137.96,
+  "ref_tag": "70b-alpha-fp16",
+  "pulls": 1900000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "dolphin-mistral:7b",
+  "name": "dolphin-mistral",
+  "display": "Dolphin（7B）",
+  "desc": "Dolphin，对话，7B 档，约 4.11 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.11,
+  "ref_tag": "7b",
+  "pulls": 1800000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama4:17b-scout-16e-instruct-fp16",
+  "name": "llama4",
+  "display": "Meta Llama 4（17B）",
+  "desc": "Meta Llama 4，对话，17B 档，约 217.31 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 217.31,
+  "ref_tag": "17b-scout-16e-instruct-fp16",
+  "pulls": 1800000,
+  "params_billion": 17.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "hermes3:3b",
+  "name": "hermes3",
+  "display": "Hermes（3B）",
+  "desc": "Hermes，对话，3B 档，约 2.02 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.02,
+  "ref_tag": "3b",
+  "pulls": 1700000,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "hermes3:70b",
+  "name": "hermes3",
+  "display": "Hermes（70B）",
+  "desc": "Hermes，对话，70B 档，约 39.97 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 39.97,
+  "ref_tag": "70b",
+  "pulls": 1700000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "hermes3:405b",
+  "name": "hermes3",
+  "display": "Hermes（405B）",
+  "desc": "Hermes，对话，405B 档，约 228.86 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 228.86,
+  "ref_tag": "405b",
+  "pulls": 1700000,
+  "params_billion": 405.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "dolphin-phi:2.7b",
+  "name": "dolphin-phi",
+  "display": "Dolphin（2.7B）",
+  "desc": "Dolphin，对话，2.7B 档，约 1.6 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.6,
+  "ref_tag": "2.7b",
+  "pulls": 1600000,
+  "params_billion": 2.7,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite-code:3b",
+  "name": "granite-code",
+  "display": "IBM Granite Code（3B）",
+  "desc": "IBM Granite Code，代码，3B 档，约 2 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.0,
+  "ref_tag": "3b",
+  "pulls": 1600000,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite-code:20b",
+  "name": "granite-code",
+  "display": "IBM Granite Code（20B）",
+  "desc": "IBM Granite Code，代码，20B 档，约 11.55 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 11.55,
+  "ref_tag": "20b",
+  "pulls": 1600000,
+  "params_billion": 20.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite-code:34b",
+  "name": "granite-code",
+  "display": "IBM Granite Code（34B）",
+  "desc": "IBM Granite Code，代码，34B 档，约 19.24 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.24,
+  "ref_tag": "34b",
+  "pulls": 1600000,
+  "params_billion": 34.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "command-r:35b",
+  "name": "command-r",
+  "display": "Cohere Command-R（35B）",
+  "desc": "Cohere Command-R，对话，35B 档，约 18.72 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 18.72,
+  "ref_tag": "35b",
+  "pulls": 1500000,
+  "params_billion": 35.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite4:350m",
+  "name": "granite4",
+  "display": "IBM Granite（350M）",
+  "desc": "IBM Granite，对话，350M 档，约 0.71 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.71,
+  "ref_tag": "350m",
+  "pulls": 1500000,
+  "params_billion": 0.35,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite4:1b",
+  "name": "granite4",
+  "display": "IBM Granite（1B）",
+  "desc": "IBM Granite，对话，1B 档，约 3.27 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.27,
+  "ref_tag": "1b",
+  "pulls": 1500000,
+  "params_billion": 1.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite4:3b",
+  "name": "granite4",
+  "display": "IBM Granite（3B）",
+  "desc": "IBM Granite，对话，3B 档，约 2.1 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.1,
+  "ref_tag": "3b",
+  "pulls": 1500000,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite4:7b-a1b-h",
+  "name": "granite4",
+  "display": "IBM Granite（7B）",
+  "desc": "IBM Granite，对话，7B 档，约 4.23 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.23,
+  "ref_tag": "7b-a1b-h",
+  "pulls": 1500000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite4:32b-a9b-h",
+  "name": "granite4",
+  "display": "IBM Granite（32B）",
+  "desc": "IBM Granite，对话，32B 档，约 19.48 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.48,
+  "ref_tag": "32b-a9b-h",
+  "pulls": 1500000,
+  "params_billion": 32.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "magistral:24b",
+  "name": "magistral",
+  "display": "magistral（24B）",
+  "desc": "magistral，对话，24B 档，约 14.33 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 14.33,
+  "ref_tag": "24b",
+  "pulls": 1500000,
+  "params_billion": 24.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "ministral-3:3b",
+  "name": "ministral-3",
+  "display": "Ministral（3B）",
+  "desc": "Ministral，对话，3B 档，约 2.95 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.95,
+  "ref_tag": "3b",
+  "pulls": 1500000,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "ministral-3:8b",
+  "name": "ministral-3",
+  "display": "Ministral（8B）",
+  "desc": "Ministral，对话，8B 档，约 6.02 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 6.02,
+  "ref_tag": "8b",
+  "pulls": 1500000,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "ministral-3:14b",
+  "name": "ministral-3",
+  "display": "Ministral（14B）",
+  "desc": "Ministral，对话，14B 档，约 9.08 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 9.08,
+  "ref_tag": "14b",
+  "pulls": 1500000,
+  "params_billion": 14.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "phi:2.7b",
+  "name": "phi",
+  "display": "微软 Phi（2.7B）",
+  "desc": "微软 Phi，对话，2.7B 档，约 1.6 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.6,
+  "ref_tag": "2.7b",
+  "pulls": 1500000,
+  "params_billion": 2.7,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "starcoder:1b",
+  "name": "starcoder",
+  "display": "StarCoder（1B）",
+  "desc": "StarCoder，代码，1B 档，约 0.73 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.73,
+  "ref_tag": "1b",
+  "pulls": 1400000,
+  "params_billion": 1.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "starcoder:3b",
+  "name": "starcoder",
+  "display": "StarCoder（3B）",
+  "desc": "StarCoder，代码，3B 档，约 1.83 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.83,
+  "ref_tag": "3b",
+  "pulls": 1400000,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "starcoder:7b",
+  "name": "starcoder",
+  "display": "StarCoder（7B）",
+  "desc": "StarCoder，代码，7B 档，约 4.3 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.3,
+  "ref_tag": "7b",
+  "pulls": 1400000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "starcoder:15b",
+  "name": "starcoder",
+  "display": "StarCoder（15B）",
+  "desc": "StarCoder，代码，15B 档，约 8.99 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 8.99,
+  "ref_tag": "15b",
+  "pulls": 1400000,
+  "params_billion": 15.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepscaler:1.5b",
+  "name": "deepscaler",
+  "display": "deepscaler（1.5B）",
+  "desc": "deepscaler，对话，1.5B 档，约 3.56 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.56,
+  "ref_tag": "1.5b",
+  "pulls": 1300000,
+  "params_billion": 1.5,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "devstral-small-2:24b",
+  "name": "devstral-small-2",
+  "display": "Devstral（24B）",
+  "desc": "Devstral，代码，24B 档，约 15.18 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 15.18,
+  "ref_tag": "24b",
+  "pulls": 1300000,
+  "params_billion": 24.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "lfm2.5-thinking:1.2b",
+  "name": "lfm2.5-thinking",
+  "display": "lfm2.5-thinking（1.2B）",
+  "desc": "lfm2.5-thinking，推理，1.2B 档，约 0.73 GB。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.73,
+  "ref_tag": "1.2b",
+  "pulls": 1300000,
+  "params_billion": 1.2,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mistral-large:123b",
+  "name": "mistral-large",
+  "display": "Mistral（123B）",
+  "desc": "Mistral，对话，123B 档，约 73.22 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 73.22,
+  "ref_tag": "123b",
+  "pulls": 1300000,
+  "params_billion": 123.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizard-vicuna-uncensored:7b",
+  "name": "wizard-vicuna-uncensored",
+  "display": "wizard-vicuna-uncensored（7B）",
+  "desc": "wizard-vicuna-uncensored，对话，7B 档，约 3.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b",
+  "pulls": 1300000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizard-vicuna-uncensored:13b",
+  "name": "wizard-vicuna-uncensored",
+  "display": "wizard-vicuna-uncensored（13B）",
+  "desc": "wizard-vicuna-uncensored，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 1300000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizard-vicuna-uncensored:30b",
+  "name": "wizard-vicuna-uncensored",
+  "display": "wizard-vicuna-uncensored（30B）",
+  "desc": "wizard-vicuna-uncensored，对话，30B 档，约 18.36 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 18.36,
+  "ref_tag": "30b",
+  "pulls": 1300000,
+  "params_billion": 30.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "zephyr:141b",
+  "name": "zephyr",
+  "display": "Zephyr（141B）",
+  "desc": "Zephyr，对话，141B 档，约 79.51 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 79.51,
+  "ref_tag": "141b",
+  "pulls": 1300000,
+  "params_billion": 141.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-llm:67b",
+  "name": "deepseek-llm",
+  "display": "深度求索 LLM（67B）",
+  "desc": "深度求索 LLM，对话，67B 档，约 38.15 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 38.15,
+  "ref_tag": "67b",
+  "pulls": 1200000,
+  "params_billion": 67.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-v2:236b",
+  "name": "deepseek-v2",
+  "display": "深度求索（236B）",
+  "desc": "深度求索，对话，236B 档，约 132.91 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 132.91,
+  "ref_tag": "236b",
+  "pulls": 1200000,
+  "params_billion": 236.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "falcon:40b",
+  "name": "falcon",
+  "display": "Falcon（40B）",
+  "desc": "Falcon，对话，40B 档，约 23.81 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 23.81,
+  "ref_tag": "40b",
+  "pulls": 1200000,
+  "params_billion": 40.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "falcon:180b",
+  "name": "falcon",
+  "display": "Falcon（180B）",
+  "desc": "Falcon，对话，180B 档，约 101.48 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 101.48,
+  "ref_tag": "180b",
+  "pulls": 1200000,
+  "params_billion": 180.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nous-hermes:7b",
+  "name": "nous-hermes",
+  "display": "nous-hermes（7B）",
+  "desc": "nous-hermes，对话，7B 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 14.0,
+  "ref_tag": "7b",
+  "pulls": 1200000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nous-hermes:13b",
+  "name": "nous-hermes",
+  "display": "nous-hermes（13B）",
+  "desc": "nous-hermes，对话，13B 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 26.0,
+  "ref_tag": "13b",
+  "pulls": 1200000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nous-hermes:70b-llama2-fp16",
+  "name": "nous-hermes",
+  "display": "nous-hermes（70B）",
+  "desc": "nous-hermes，对话，70B 档，约 137.96 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 137.96,
+  "ref_tag": "70b-llama2-fp16",
+  "pulls": 1200000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "openhermes:7b-v2",
+  "name": "openhermes",
+  "display": "openhermes（7B）",
+  "desc": "openhermes，对话，7B 档，约 4.11 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.11,
+  "ref_tag": "7b-v2",
+  "pulls": 1200000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "openthinker:7b",
+  "name": "openthinker",
+  "display": "OpenThinker（7B）",
+  "desc": "OpenThinker，推理，7B 档，约 4.68 GB。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.68,
+  "ref_tag": "7b",
+  "pulls": 1200000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "vicuna:13b",
+  "name": "vicuna",
+  "display": "Vicuna（13B）",
+  "desc": "Vicuna，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 1200000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "vicuna:33b",
+  "name": "vicuna",
+  "display": "Vicuna（33B）",
+  "desc": "Vicuna，对话，33B 档，约 18.36 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 18.36,
+  "ref_tag": "33b",
+  "pulls": 1200000,
+  "params_billion": 33.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizardcoder:7b-python",
+  "name": "wizardcoder",
+  "display": "wizardcoder（7B）",
+  "desc": "wizardcoder，代码，7B 档，约 3.83 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b-python",
+  "pulls": 1200000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizardcoder:13b-python",
+  "name": "wizardcoder",
+  "display": "wizardcoder（13B）",
+  "desc": "wizardcoder，代码，13B 档，约 7.37 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b-python",
+  "pulls": 1200000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizardcoder:33b",
+  "name": "wizardcoder",
+  "display": "wizardcoder（33B）",
+  "desc": "wizardcoder，代码，33B 档，约 18.82 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 18.82,
+  "ref_tag": "33b",
+  "pulls": 1200000,
+  "params_billion": 33.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizardcoder:34b-python",
+  "name": "wizardcoder",
+  "display": "wizardcoder（34B）",
+  "desc": "wizardcoder，代码，34B 档，约 19.05 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.05,
+  "ref_tag": "34b-python",
+  "pulls": 1200000,
+  "params_billion": 34.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "aya:8b",
+  "name": "aya",
+  "display": "Cohere Aya（8B）",
+  "desc": "Cohere Aya，对话，8B 档，约 4.8 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.8,
+  "ref_tag": "8b",
+  "pulls": 1100000,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "aya:35b",
+  "name": "aya",
+  "display": "Cohere Aya（35B）",
+  "desc": "Cohere Aya，对话，35B 档，约 20.23 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 20.23,
+  "ref_tag": "35b",
+  "pulls": 1100000,
+  "params_billion": 35.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3.3:2b",
+  "name": "granite3.3",
+  "display": "IBM Granite 3（2B）",
+  "desc": "IBM Granite 3，对话，2B 档，约 1.55 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.55,
+  "ref_tag": "2b",
+  "pulls": 1100000,
+  "params_billion": 2.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "lfm2:24b",
+  "name": "lfm2",
+  "display": "lfm2（24B）",
+  "desc": "lfm2，对话，24B 档，约 14.42 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 14.42,
+  "ref_tag": "24b",
+  "pulls": 1100000,
+  "params_billion": 24.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama-guard3:1b",
+  "name": "llama-guard3",
+  "display": "Meta Llama（1B）",
+  "desc": "Meta Llama，对话，1B 档，约 1.6 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.6,
+  "ref_tag": "1b",
+  "pulls": 1100000,
+  "params_billion": 1.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama-guard3:8b",
+  "name": "llama-guard3",
+  "display": "Meta Llama（8B）",
+  "desc": "Meta Llama，对话，8B 档，约 4.92 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.92,
+  "ref_tag": "8b",
+  "pulls": 1100000,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama2-chinese:7b",
+  "name": "llama2-chinese",
+  "display": "Meta Llama（7B）",
+  "desc": "Meta Llama，对话，7B 档，约 3.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b",
+  "pulls": 1100000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama2-chinese:13b",
+  "name": "llama2-chinese",
+  "display": "Meta Llama（13B）",
+  "desc": "Meta Llama，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 1100000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "neural-chat:7b",
+  "name": "neural-chat",
+  "display": "neural-chat（7B）",
+  "desc": "neural-chat，对话，7B 档，约 4.11 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.11,
+  "ref_tag": "7b",
+  "pulls": 1100000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nous-hermes2:10.7b",
+  "name": "nous-hermes2",
+  "display": "nous-hermes2（10.7B）",
+  "desc": "nous-hermes2，对话，10.7B 档，约 6.07 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 6.07,
+  "ref_tag": "10.7b",
+  "pulls": 1100000,
+  "params_billion": 10.7,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nous-hermes2:34b",
+  "name": "nous-hermes2",
+  "display": "nous-hermes2（34B）",
+  "desc": "nous-hermes2，对话，34B 档，约 19.47 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.47,
+  "ref_tag": "34b",
+  "pulls": 1100000,
+  "params_billion": 34.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2-math:1.5b",
+  "name": "qwen2-math",
+  "display": "通义千问 2（1.5B）",
+  "desc": "通义千问 2，推理，1.5B 档，约 0.93 GB。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.93,
+  "ref_tag": "1.5b",
+  "pulls": 1100000,
+  "params_billion": 1.5,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2-math:7b",
+  "name": "qwen2-math",
+  "display": "通义千问 2（7B）",
+  "desc": "通义千问 2，推理，7B 档，约 4.43 GB。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.43,
+  "ref_tag": "7b",
+  "pulls": 1100000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen2-math:72b",
+  "name": "qwen2-math",
+  "display": "通义千问 2（72B）",
+  "desc": "通义千问 2，推理，72B 档，约 41.23 GB。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": true,
+  "ref_size_gb": 41.23,
+  "ref_tag": "72b",
+  "pulls": 1100000,
+  "params_billion": 72.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "stablelm2:1.6b",
+  "name": "stablelm2",
+  "display": "stablelm2（1.6B）",
+  "desc": "stablelm2，对话，1.6B 档，约 0.98 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.98,
+  "ref_tag": "1.6b",
+  "pulls": 1100000,
+  "params_billion": 1.6,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "stablelm2:12b",
+  "name": "stablelm2",
+  "display": "stablelm2（12B）",
+  "desc": "stablelm2，对话，12B 档，约 6.97 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 6.97,
+  "ref_tag": "12b",
+  "pulls": 1100000,
+  "params_billion": 12.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizard-math:7b",
+  "name": "wizard-math",
+  "display": "wizard-math（7B）",
+  "desc": "wizard-math，推理，7B 档，约 4.11 GB。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.11,
+  "ref_tag": "7b",
+  "pulls": 1100000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizard-math:13b",
+  "name": "wizard-math",
+  "display": "wizard-math（13B）",
+  "desc": "wizard-math，推理，13B 档，约 7.37 GB。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 1100000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizard-math:70b",
+  "name": "wizard-math",
+  "display": "wizard-math（70B）",
+  "desc": "wizard-math，推理，70B 档，约 38.87 GB。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": false,
+  "ref_size_gb": 38.87,
+  "ref_tag": "70b",
+  "pulls": 1100000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "yi-coder:1.5b",
+  "name": "yi-coder",
+  "display": "零一万物 Yi-Coder（1.5B）",
+  "desc": "零一万物 Yi-Coder，代码，1.5B 档，约 0.87 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.87,
+  "ref_tag": "1.5b",
+  "pulls": 1100000,
+  "params_billion": 1.5,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "aya-expanse:32b",
+  "name": "aya-expanse",
+  "display": "Cohere Aya（32B）",
+  "desc": "Cohere Aya，对话，32B 档，约 19.8 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.8,
+  "ref_tag": "32b",
+  "pulls": 1000000,
+  "params_billion": 32.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "dolphincoder:7b",
+  "name": "dolphincoder",
+  "display": "Dolphin（7B）",
+  "desc": "Dolphin，代码，7B 档，约 4.23 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.23,
+  "ref_tag": "7b",
+  "pulls": 1000000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "dolphincoder:15b",
+  "name": "dolphincoder",
+  "display": "Dolphin（15B）",
+  "desc": "Dolphin，代码，15B 档，约 9.07 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 9.07,
+  "ref_tag": "15b",
+  "pulls": 1000000,
+  "params_billion": 15.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3-dense:2b",
+  "name": "granite3-dense",
+  "display": "IBM Granite 3（2B）",
+  "desc": "IBM Granite 3，对话，2B 档，约 1.6 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.6,
+  "ref_tag": "2b",
+  "pulls": 1000000,
+  "params_billion": 2.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3-dense:8b",
+  "name": "granite3-dense",
+  "display": "IBM Granite 3（8B）",
+  "desc": "IBM Granite 3，对话，8B 档，约 4.94 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.94,
+  "ref_tag": "8b",
+  "pulls": 1000000,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3.1-dense:2b",
+  "name": "granite3.1-dense",
+  "display": "IBM Granite 3（2B）",
+  "desc": "IBM Granite 3，对话，2B 档，约 1.57 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.57,
+  "ref_tag": "2b",
+  "pulls": 1000000,
+  "params_billion": 2.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3.1-dense:8b",
+  "name": "granite3.1-dense",
+  "display": "IBM Granite 3（8B）",
+  "desc": "IBM Granite 3，对话，8B 档，约 4.99 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.99,
+  "ref_tag": "8b",
+  "pulls": 1000000,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3.2-vision:2b",
+  "name": "granite3.2-vision",
+  "display": "IBM Granite 3（2B）",
+  "desc": "IBM Granite 3，视觉理解、对话，2B 档，约 2.44 GB。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.44,
+  "ref_tag": "2b",
+  "pulls": 1000000,
+  "params_billion": 2.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "internlm2:1m",
+  "name": "internlm2",
+  "display": "书生·浦语（1M）",
+  "desc": "书生·浦语，对话，1M 档，约 4.45 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 4.45,
+  "ref_tag": "1m",
+  "pulls": 1000000,
+  "params_billion": 0.001,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "internlm2:1.8b",
+  "name": "internlm2",
+  "display": "书生·浦语（1.8B）",
+  "desc": "书生·浦语，对话，1.8B 档，约 1.11 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 1.11,
+  "ref_tag": "1.8b",
+  "pulls": 1000000,
+  "params_billion": 1.8,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "internlm2:20b",
+  "name": "internlm2",
+  "display": "书生·浦语（20B）",
+  "desc": "书生·浦语，对话，20B 档，约 11.32 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 11.32,
+  "ref_tag": "20b",
+  "pulls": 1000000,
+  "params_billion": 20.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3-chatqa:8b",
+  "name": "llama3-chatqa",
+  "display": "Meta Llama（8B）",
+  "desc": "Meta Llama，对话，8B 档，约 4.66 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.66,
+  "ref_tag": "8b",
+  "pulls": 1000000,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3-chatqa:70b",
+  "name": "llama3-chatqa",
+  "display": "Meta Llama（70B）",
+  "desc": "Meta Llama，对话，70B 档，约 39.97 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 39.97,
+  "ref_tag": "70b",
+  "pulls": 1000000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3-gradient:8b",
+  "name": "llama3-gradient",
+  "display": "Meta Llama（8B）",
+  "desc": "Meta Llama，对话，8B 档，约 4.66 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.66,
+  "ref_tag": "8b",
+  "pulls": 1000000,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3-gradient:70b",
+  "name": "llama3-gradient",
+  "display": "Meta Llama（70B）",
+  "desc": "Meta Llama，对话，70B 档，约 39.97 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 39.97,
+  "ref_tag": "70b",
+  "pulls": 1000000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3-groq-tool-use:8b",
+  "name": "llama3-groq-tool-use",
+  "display": "Meta Llama（8B）",
+  "desc": "Meta Llama，对话，8B 档，约 4.66 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.66,
+  "ref_tag": "8b",
+  "pulls": 1000000,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama3-groq-tool-use:70b",
+  "name": "llama3-groq-tool-use",
+  "display": "Meta Llama（70B）",
+  "desc": "Meta Llama，对话，70B 档，约 39.97 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 39.97,
+  "ref_tag": "70b",
+  "pulls": 1000000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "samantha-mistral:7b",
+  "name": "samantha-mistral",
+  "display": "samantha-mistral（7B）",
+  "desc": "samantha-mistral，对话，7B 档，约 4.11 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.11,
+  "ref_tag": "7b",
+  "pulls": 1000000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "xwinlm:7b",
+  "name": "xwinlm",
+  "display": "xwinlm（7B）",
+  "desc": "xwinlm，对话，7B 档，约 3.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b",
+  "pulls": 1000000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "xwinlm:13b",
+  "name": "xwinlm",
+  "display": "xwinlm（13B）",
+  "desc": "xwinlm，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 1000000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "xwinlm:70b-v0.1",
+  "name": "xwinlm",
+  "display": "xwinlm（70B）",
+  "desc": "xwinlm，对话，70B 档，约 38.87 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 38.87,
+  "ref_tag": "70b-v0.1",
+  "pulls": 1000000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "yarn-llama2:7b",
+  "name": "yarn-llama2",
+  "display": "yarn-llama2（7B）",
+  "desc": "yarn-llama2，对话，7B 档，约 3.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b",
+  "pulls": 1000000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "yarn-llama2:13b",
+  "name": "yarn-llama2",
+  "display": "yarn-llama2（13B）",
+  "desc": "yarn-llama2，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 1000000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "starling-lm:7b",
+  "name": "starling-lm",
+  "display": "starling-lm（7B）",
+  "desc": "starling-lm，对话，7B 档，约 4.11 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.11,
+  "ref_tag": "7b",
+  "pulls": 997100,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "phind-codellama:34b",
+  "name": "phind-codellama",
+  "display": "微软 Phi（34B）",
+  "desc": "微软 Phi，代码，34B 档，约 19.05 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.05,
+  "ref_tag": "34b",
+  "pulls": 991500,
+  "params_billion": 34.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3-moe:1b",
+  "name": "granite3-moe",
+  "display": "IBM Granite 3（1B）",
+  "desc": "IBM Granite 3，对话，1B 档，约 0.82 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.82,
+  "ref_tag": "1b",
+  "pulls": 966500,
+  "params_billion": 1.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3-moe:3b",
+  "name": "granite3-moe",
+  "display": "IBM Granite 3（3B）",
+  "desc": "IBM Granite 3，对话，3B 档，约 2.06 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.06,
+  "ref_tag": "3b",
+  "pulls": 966500,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nomic-embed-text-v2-moe:latest",
+  "name": "nomic-embed-text-v2-moe",
+  "display": "Nomic（latest）",
+  "desc": "Nomic，向量检索，latest 档，约 0.96 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.96,
+  "ref_tag": "latest",
+  "pulls": 964800,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "stable-beluga:7b",
+  "name": "stable-beluga",
+  "display": "stable-beluga（7B）",
+  "desc": "stable-beluga，对话，7B 档，约 3.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b",
+  "pulls": 959700,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "stable-beluga:13b",
+  "name": "stable-beluga",
+  "display": "stable-beluga（13B）",
+  "desc": "stable-beluga，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 959700,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "stable-beluga:70b",
+  "name": "stable-beluga",
+  "display": "stable-beluga（70B）",
+  "desc": "stable-beluga，对话，70B 档，约 38.87 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 38.87,
+  "ref_tag": "70b",
+  "pulls": 959700,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepcoder:1.5b",
+  "name": "deepcoder",
+  "display": "deepcoder（1.5B）",
+  "desc": "deepcoder，代码，1.5B 档，约 1.12 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.12,
+  "ref_tag": "1.5b",
+  "pulls": 956600,
+  "params_billion": 1.5,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepcoder:14b",
+  "name": "deepcoder",
+  "display": "deepcoder（14B）",
+  "desc": "deepcoder，代码，14B 档，约 8.99 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 8.99,
+  "ref_tag": "14b",
+  "pulls": 956600,
+  "params_billion": 14.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "shieldgemma:2b",
+  "name": "shieldgemma",
+  "display": "shieldgemma（2B）",
+  "desc": "shieldgemma，对话，2B 档，约 1.71 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.71,
+  "ref_tag": "2b",
+  "pulls": 949900,
+  "params_billion": 2.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "shieldgemma:9b",
+  "name": "shieldgemma",
+  "display": "shieldgemma（9B）",
+  "desc": "shieldgemma，对话，9B 档，约 5.76 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.76,
+  "ref_tag": "9b",
+  "pulls": 949900,
+  "params_billion": 9.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "shieldgemma:27b",
+  "name": "shieldgemma",
+  "display": "shieldgemma（27B）",
+  "desc": "shieldgemma，对话，27B 档，约 16.65 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 16.65,
+  "ref_tag": "27b",
+  "pulls": 949900,
+  "params_billion": 27.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "orca2:7b",
+  "name": "orca2",
+  "display": "Orca（7B）",
+  "desc": "Orca，对话，7B 档，约 3.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b",
+  "pulls": 949200,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "orca2:13b",
+  "name": "orca2",
+  "display": "Orca（13B）",
+  "desc": "Orca，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 949200,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "paraphrase-multilingual:278m",
+  "name": "paraphrase-multilingual",
+  "display": "句向量（278M）",
+  "desc": "句向量，向量检索，278M 档，约 0.56 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.56,
+  "ref_tag": "278m",
+  "pulls": 943300,
+  "params_billion": 0.278,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "reader-lm:0.5b",
+  "name": "reader-lm",
+  "display": "reader-lm（500M）",
+  "desc": "reader-lm，对话，500M 档，约 0.35 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.35,
+  "ref_tag": "0.5b",
+  "pulls": 940900,
+  "params_billion": 0.5,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "reader-lm:1.5b",
+  "name": "reader-lm",
+  "display": "reader-lm（1.5B）",
+  "desc": "reader-lm，对话，1.5B 档，约 0.93 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.93,
+  "ref_tag": "1.5b",
+  "pulls": 940900,
+  "params_billion": 1.5,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizardlm:7b-fp16",
+  "name": "wizardlm",
+  "display": "WizardLM（7B）",
+  "desc": "WizardLM，对话，7B 档，约 13.48 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 13.48,
+  "ref_tag": "7b-fp16",
+  "pulls": 932800,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizardlm:13b-fp16",
+  "name": "wizardlm",
+  "display": "WizardLM（13B）",
+  "desc": "WizardLM，对话，13B 档，约 26.03 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 26.03,
+  "ref_tag": "13b-fp16",
+  "pulls": 932800,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizardlm:30b-fp16",
+  "name": "wizardlm",
+  "display": "WizardLM（30B）",
+  "desc": "WizardLM，对话，30B 档，约 65.06 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 65.06,
+  "ref_tag": "30b-fp16",
+  "pulls": 932800,
+  "params_billion": 30.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizardlm:70b-llama2-q2_K",
+  "name": "wizardlm",
+  "display": "WizardLM（70B）",
+  "desc": "WizardLM，对话，70B 档，约 29.28 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 29.28,
+  "ref_tag": "70b-llama2-q2_K",
+  "pulls": 932800,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llama-pro:8b-text-fp16",
+  "name": "llama-pro",
+  "display": "Meta Llama（8B）",
+  "desc": "Meta Llama，对话，8B 档，约 16.72 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 16.72,
+  "ref_tag": "8b-text-fp16",
+  "pulls": 923200,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "yarn-mistral:7b",
+  "name": "yarn-mistral",
+  "display": "yarn-mistral（7B）",
+  "desc": "yarn-mistral，对话，7B 档，约 4.11 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.11,
+  "ref_tag": "7b",
+  "pulls": 913600,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nexusraven:13b",
+  "name": "nexusraven",
+  "display": "nexusraven（13B）",
+  "desc": "nexusraven，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 907700,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "meditron:7b",
+  "name": "meditron",
+  "display": "meditron（7B）",
+  "desc": "meditron，对话，7B 档，约 3.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b",
+  "pulls": 899500,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "meditron:70b",
+  "name": "meditron",
+  "display": "meditron（70B）",
+  "desc": "meditron，对话，70B 档，约 38.87 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 38.87,
+  "ref_tag": "70b",
+  "pulls": 899500,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "bakllava:7b",
+  "name": "bakllava",
+  "display": "bakllava（7B）",
+  "desc": "bakllava，视觉理解、对话，7B 档，约 4.73 GB。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.73,
+  "ref_tag": "7b",
+  "pulls": 894000,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nemotron-3-nano:4b",
+  "name": "nemotron-3-nano",
+  "display": "NVIDIA Nemotron（4B）",
+  "desc": "NVIDIA Nemotron，对话，4B 档，约 2.84 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.84,
+  "ref_tag": "4b",
+  "pulls": 861300,
+  "params_billion": 4.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nemotron-3-nano:30b",
+  "name": "nemotron-3-nano",
+  "display": "NVIDIA Nemotron（30B）",
+  "desc": "NVIDIA Nemotron，对话，30B 档，约 24.27 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 24.27,
+  "ref_tag": "30b",
+  "pulls": 861300,
+  "params_billion": 30.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mistral-openorca:7b",
+  "name": "mistral-openorca",
+  "display": "Mistral（7B）",
+  "desc": "Mistral，对话，7B 档，约 4.11 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.11,
+  "ref_tag": "7b",
+  "pulls": 782300,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "exaone-deep:2.4b",
+  "name": "exaone-deep",
+  "display": "LG Exaone（2.4B）",
+  "desc": "LG Exaone，对话，2.4B 档，约 1.64 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.64,
+  "ref_tag": "2.4b",
+  "pulls": 772000,
+  "params_billion": 2.4,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "exaone-deep:7.8b",
+  "name": "exaone-deep",
+  "display": "LG Exaone（7.8B）",
+  "desc": "LG Exaone，对话，7.8B 档，约 4.77 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.77,
+  "ref_tag": "7.8b",
+  "pulls": 772000,
+  "params_billion": 7.8,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "exaone-deep:32b",
+  "name": "exaone-deep",
+  "display": "LG Exaone（32B）",
+  "desc": "LG Exaone，对话，32B 档，约 19.34 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.34,
+  "ref_tag": "32b",
+  "pulls": 772000,
+  "params_billion": 32.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "medllama2:7b",
+  "name": "medllama2",
+  "display": "medllama2（7B）",
+  "desc": "medllama2，对话，7B 档，约 3.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b",
+  "pulls": 730100,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-v3.1:671b",
+  "name": "deepseek-v3.1",
+  "display": "深度求索（671B）",
+  "desc": "深度求索，对话，671B 档，约 404.49 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 404.49,
+  "ref_tag": "671b",
+  "pulls": 730000,
+  "params_billion": 671.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nemotron3:33b",
+  "name": "nemotron3",
+  "display": "NVIDIA Nemotron（33B）",
+  "desc": "NVIDIA Nemotron，对话，33B 档，约 27.64 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 27.64,
+  "ref_tag": "33b",
+  "pulls": 666500,
+  "params_billion": 33.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "opencoder:1.5b",
+  "name": "opencoder",
+  "display": "opencoder（1.5B）",
+  "desc": "opencoder，代码，1.5B 档，约 1.42 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.42,
+  "ref_tag": "1.5b",
+  "pulls": 654100,
+  "params_billion": 1.5,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "opencoder:8b",
+  "name": "opencoder",
+  "display": "opencoder（8B）",
+  "desc": "opencoder，代码，8B 档，约 4.74 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.74,
+  "ref_tag": "8b",
+  "pulls": 654100,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizardlm-uncensored:13b",
+  "name": "wizardlm-uncensored",
+  "display": "WizardLM（13B）",
+  "desc": "WizardLM，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 652300,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nemotron:70b",
+  "name": "nemotron",
+  "display": "NVIDIA Nemotron（70B）",
+  "desc": "NVIDIA Nemotron，对话，70B 档，约 42.52 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 42.52,
+  "ref_tag": "70b",
+  "pulls": 630900,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "reflection:70b",
+  "name": "reflection",
+  "display": "reflection（70B）",
+  "desc": "reflection，对话，70B 档，约 39.97 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 39.97,
+  "ref_tag": "70b",
+  "pulls": 623000,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "codeup:13b",
+  "name": "codeup",
+  "display": "codeup（13B）",
+  "desc": "codeup，代码，13B 档，约 7.37 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 601900,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nous-hermes2-mixtral:latest",
+  "name": "nous-hermes2-mixtral",
+  "display": "nous-hermes2-mixtral（latest）",
+  "desc": "nous-hermes2-mixtral，对话，latest 档，约 26.44 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 26.44,
+  "ref_tag": "latest",
+  "pulls": 597300,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "athene-v2:72b",
+  "name": "athene-v2",
+  "display": "athene-v2（72B）",
+  "desc": "athene-v2，对话，72B 档，约 47.42 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 47.42,
+  "ref_tag": "72b",
+  "pulls": 596100,
+  "params_billion": 72.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3-next:80b",
+  "name": "qwen3-next",
+  "display": "通义千问 3（80B）",
+  "desc": "通义千问 3，对话，80B 档，约 50.35 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 50.35,
+  "ref_tag": "80b",
+  "pulls": 592500,
+  "params_billion": 80.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "megadolphin:120b",
+  "name": "megadolphin",
+  "display": "megadolphin（120B）",
+  "desc": "megadolphin，对话，120B 档，约 67.76 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 67.76,
+  "ref_tag": "120b",
+  "pulls": 575500,
+  "params_billion": 120.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "everythinglm:13b",
+  "name": "everythinglm",
+  "display": "everythinglm（13B）",
+  "desc": "everythinglm，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 572700,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "solar-pro:22b",
+  "name": "solar-pro",
+  "display": "Upstage Solar（22B）",
+  "desc": "Upstage Solar，对话，22B 档，约 13.31 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 13.31,
+  "ref_tag": "22b",
+  "pulls": 565500,
+  "params_billion": 22.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "exaone3.5:2.4b",
+  "name": "exaone3.5",
+  "display": "LG Exaone（2.4B）",
+  "desc": "LG Exaone，对话，2.4B 档，约 1.64 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.64,
+  "ref_tag": "2.4b",
+  "pulls": 565400,
+  "params_billion": 2.4,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "exaone3.5:32b",
+  "name": "exaone3.5",
+  "display": "LG Exaone（32B）",
+  "desc": "LG Exaone，对话，32B 档，约 19.34 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.34,
+  "ref_tag": "32b",
+  "pulls": 565400,
+  "params_billion": 32.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nuextract:3.8b",
+  "name": "nuextract",
+  "display": "nuextract（3.8B）",
+  "desc": "nuextract，对话，3.8B 档，约 2.18 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.18,
+  "ref_tag": "3.8b",
+  "pulls": 556200,
+  "params_billion": 3.8,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "falcon2:11b",
+  "name": "falcon2",
+  "display": "Falcon（11B）",
+  "desc": "Falcon，对话，11B 档，约 6.38 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 6.38,
+  "ref_tag": "11b",
+  "pulls": 546600,
+  "params_billion": 11.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "notus:7b",
+  "name": "notus",
+  "display": "notus（7B）",
+  "desc": "notus，对话，7B 档，约 4.11 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.11,
+  "ref_tag": "7b",
+  "pulls": 546300,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "notux:latest",
+  "name": "notux",
+  "display": "notux（latest）",
+  "desc": "notux，对话，latest 档，约 26.44 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 26.44,
+  "ref_tag": "latest",
+  "pulls": 545100,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-ocr:3b",
+  "name": "deepseek-ocr",
+  "display": "深度求索（3B）",
+  "desc": "深度求索，对话，3B 档，约 6.69 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 6.69,
+  "ref_tag": "3b",
+  "pulls": 539700,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "stablelm-zephyr:3b",
+  "name": "stablelm-zephyr",
+  "display": "stablelm-zephyr（3B）",
+  "desc": "stablelm-zephyr，对话，3B 档，约 1.61 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.61,
+  "ref_tag": "3b",
+  "pulls": 539100,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "bespoke-minicheck:7b",
+  "name": "bespoke-minicheck",
+  "display": "bespoke-minicheck（7B）",
+  "desc": "bespoke-minicheck，对话，7B 档，约 4.71 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.71,
+  "ref_tag": "7b",
+  "pulls": 535900,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "duckdb-nsql:7b",
+  "name": "duckdb-nsql",
+  "display": "duckdb-nsql（7B）",
+  "desc": "duckdb-nsql，对话，7B 档，约 3.83 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.83,
+  "ref_tag": "7b",
+  "pulls": 533800,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "ornith:9b",
+  "name": "ornith",
+  "display": "ornith（9B）",
+  "desc": "ornith，对话，9B 档，约 5.63 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.63,
+  "ref_tag": "9b",
+  "pulls": 531700,
+  "params_billion": 9.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "ornith:35b",
+  "name": "ornith",
+  "display": "ornith（35B）",
+  "desc": "ornith，对话，35B 档，约 21.17 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 21.17,
+  "ref_tag": "35b",
+  "pulls": 531700,
+  "params_billion": 35.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "firefunction-v2:70b",
+  "name": "firefunction-v2",
+  "display": "firefunction-v2（70B）",
+  "desc": "firefunction-v2，对话，70B 档，约 39.97 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 39.97,
+  "ref_tag": "70b",
+  "pulls": 530200,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mistrallite:7b",
+  "name": "mistrallite",
+  "display": "Mistral（7B）",
+  "desc": "Mistral，对话，7B 档，约 4.11 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.11,
+  "ref_tag": "7b",
+  "pulls": 529700,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "wizard-vicuna:13b",
+  "name": "wizard-vicuna",
+  "display": "wizard-vicuna（13B）",
+  "desc": "wizard-vicuna，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 524000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "open-orca-platypus2:13b",
+  "name": "open-orca-platypus2",
+  "display": "open-orca-platypus2（13B）",
+  "desc": "open-orca-platypus2，对话，13B 档，约 7.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 7.37,
+  "ref_tag": "13b",
+  "pulls": 516000,
+  "params_billion": 13.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "minimax-m3:cloud",
+  "name": "minimax-m3",
+  "display": "minimax-m3（cloud）",
+  "desc": "minimax-m3，对话，cloud 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.0,
+  "ref_tag": "cloud",
+  "pulls": 515600,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "rnj-1:8b",
+  "name": "rnj-1",
+  "display": "rnj-1（8B）",
+  "desc": "rnj-1，对话，8B 档，约 5.11 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.11,
+  "ref_tag": "8b",
+  "pulls": 510700,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "codebooga:34b",
+  "name": "codebooga",
+  "display": "codebooga（34B）",
+  "desc": "codebooga，代码，34B 档，约 19.05 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.05,
+  "ref_tag": "34b",
+  "pulls": 506100,
+  "params_billion": 34.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "goliath:120b-fp16",
+  "name": "goliath",
+  "display": "goliath（120B）",
+  "desc": "goliath，对话，120B 档，约 235.5 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 235.5,
+  "ref_tag": "120b-fp16",
+  "pulls": 485200,
+  "params_billion": 120.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "kimi-k2.6:cloud",
+  "name": "kimi-k2.6",
+  "display": "kimi-k2.6（cloud）",
+  "desc": "kimi-k2.6，对话，cloud 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.0,
+  "ref_tag": "cloud",
+  "pulls": 481300,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite4.1:3b",
+  "name": "granite4.1",
+  "display": "IBM Granite（3B）",
+  "desc": "IBM Granite，对话，3B 档，约 2.1 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.1,
+  "ref_tag": "3b",
+  "pulls": 475900,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite4.1:8b",
+  "name": "granite4.1",
+  "display": "IBM Granite（8B）",
+  "desc": "IBM Granite，对话，8B 档，约 5.35 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.35,
+  "ref_tag": "8b",
+  "pulls": 475900,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite4.1:30b",
+  "name": "granite4.1",
+  "display": "IBM Granite（30B）",
+  "desc": "IBM Granite，对话，30B 档，约 17.49 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 17.49,
+  "ref_tag": "30b",
+  "pulls": 475900,
+  "params_billion": 30.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "olmo-3:7b",
+  "name": "olmo-3",
+  "display": "AI2 OLMo（7B）",
+  "desc": "AI2 OLMo，对话，7B 档，约 4.47 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.47,
+  "ref_tag": "7b",
+  "pulls": 462100,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "olmo-3:32b",
+  "name": "olmo-3",
+  "display": "AI2 OLMo（32B）",
+  "desc": "AI2 OLMo，对话，32B 档，约 19.48 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.48,
+  "ref_tag": "32b",
+  "pulls": 462100,
+  "params_billion": 32.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3.2:2b",
+  "name": "granite3.2",
+  "display": "IBM Granite 3（2B）",
+  "desc": "IBM Granite 3，对话，2B 档，约 1.55 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.55,
+  "ref_tag": "2b",
+  "pulls": 460600,
+  "params_billion": 2.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3.2:8b",
+  "name": "granite3.2",
+  "display": "IBM Granite 3（8B）",
+  "desc": "IBM Granite 3，对话，8B 档，约 4.94 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 4.94,
+  "ref_tag": "8b",
+  "pulls": 460600,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "snowflake-arctic-embed2:568m",
+  "name": "snowflake-arctic-embed2",
+  "display": "Snowflake（568M）",
+  "desc": "Snowflake，向量检索，568M 档，约 1.16 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.16,
+  "ref_tag": "568m",
+  "pulls": 457900,
+  "params_billion": 0.568,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "llava-phi3:3.8b",
+  "name": "llava-phi3",
+  "display": "LLaVA（3.8B）",
+  "desc": "LLaVA，视觉理解、对话，3.8B 档，约 2.93 GB。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.93,
+  "ref_tag": "3.8b",
+  "pulls": 438600,
+  "params_billion": 3.8,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "r1-1776:70b",
+  "name": "r1-1776",
+  "display": "r1-1776（70B）",
+  "desc": "r1-1776，对话，70B 档，约 42.52 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 42.52,
+  "ref_tag": "70b",
+  "pulls": 425200,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "r1-1776:671b",
+  "name": "r1-1776",
+  "display": "r1-1776（671B）",
+  "desc": "r1-1776，对话，671B 档，约 404.43 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 404.43,
+  "ref_tag": "671b",
+  "pulls": 425200,
+  "params_billion": 671.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-v4-pro:0813-cloud",
+  "name": "deepseek-v4-pro",
+  "display": "深度求索（0813-cloud）",
+  "desc": "深度求索，对话，0813-cloud 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.0,
+  "ref_tag": "0813-cloud",
+  "pulls": 425000,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "sailor2:1b",
+  "name": "sailor2",
+  "display": "sailor2（1B）",
+  "desc": "sailor2，对话，1B 档，约 1.06 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1.06,
+  "ref_tag": "1b",
+  "pulls": 419400,
+  "params_billion": 1.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "sailor2:8b",
+  "name": "sailor2",
+  "display": "sailor2（8B）",
+  "desc": "sailor2，对话，8B 档，约 5.24 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.24,
+  "ref_tag": "8b",
+  "pulls": 419400,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "sailor2:20b",
+  "name": "sailor2",
+  "display": "sailor2（20B）",
+  "desc": "sailor2，对话，20B 档，约 11.62 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 11.62,
+  "ref_tag": "20b",
+  "pulls": 419400,
+  "params_billion": 20.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mistral-medium-3.5:128b",
+  "name": "mistral-medium-3.5",
+  "display": "Mistral（128B）",
+  "desc": "Mistral，对话，128B 档，约 80.24 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 80.24,
+  "ref_tag": "128b",
+  "pulls": 415000,
+  "params_billion": 128.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "tulu3:70b",
+  "name": "tulu3",
+  "display": "AI2 Tülu（70B）",
+  "desc": "AI2 Tülu，对话，70B 档，约 42.52 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 42.52,
+  "ref_tag": "70b",
+  "pulls": 402400,
+  "params_billion": 70.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite-embedding:30m",
+  "name": "granite-embedding",
+  "display": "IBM Granite（30M）",
+  "desc": "IBM Granite，向量检索，30M 档，约 0.06 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.06,
+  "ref_tag": "30m",
+  "pulls": 374800,
+  "params_billion": 0.03,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite-embedding:278m",
+  "name": "granite-embedding",
+  "display": "IBM Granite（278M）",
+  "desc": "IBM Granite，向量检索，278M 档，约 0.56 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.56,
+  "ref_tag": "278m",
+  "pulls": 374800,
+  "params_billion": 0.278,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "dbrx:132b",
+  "name": "dbrx",
+  "display": "dbrx（132B）",
+  "desc": "dbrx，对话，132B 档，约 74.19 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 74.19,
+  "ref_tag": "132b",
+  "pulls": 369400,
+  "params_billion": 132.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "devstral-2:123b",
+  "name": "devstral-2",
+  "display": "Devstral（123B）",
+  "desc": "Devstral，代码，123B 档，约 74.9 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 74.9,
+  "ref_tag": "123b",
+  "pulls": 357900,
+  "params_billion": 123.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "glm-5.2:cloud",
+  "name": "glm-5.2",
+  "display": "智谱 GLM（cloud）",
+  "desc": "智谱 GLM，对话，cloud 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.0,
+  "ref_tag": "cloud",
+  "pulls": 352100,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "ornith-1.5:9b",
+  "name": "ornith-1.5",
+  "display": "ornith-1.5（9B）",
+  "desc": "ornith-1.5，对话，9B 档，约 6.55 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 6.55,
+  "ref_tag": "9b",
+  "pulls": 348200,
+  "params_billion": 9.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "ornith-1.5:35b",
+  "name": "ornith-1.5",
+  "display": "ornith-1.5（35B）",
+  "desc": "ornith-1.5，对话，35B 档，约 22.62 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 22.62,
+  "ref_tag": "35b",
+  "pulls": 348200,
+  "params_billion": 35.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "ornith-1.5:397b",
+  "name": "ornith-1.5",
+  "display": "ornith-1.5（397B）",
+  "desc": "ornith-1.5，对话，397B 档，约 241.53 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 241.53,
+  "ref_tag": "397b",
+  "pulls": 348200,
+  "params_billion": 397.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3-guardian:2b",
+  "name": "granite3-guardian",
+  "display": "IBM Granite 3（2B）",
+  "desc": "IBM Granite 3，对话，2B 档，约 2.69 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.69,
+  "ref_tag": "2b",
+  "pulls": 340700,
+  "params_billion": 2.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite3-guardian:8b",
+  "name": "granite3-guardian",
+  "display": "IBM Granite 3（8B）",
+  "desc": "IBM Granite 3，对话，8B 档，约 5.8 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.8,
+  "ref_tag": "8b",
+  "pulls": 340700,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "command-r7b:7b",
+  "name": "command-r7b",
+  "display": "Cohere Command-R（7B）",
+  "desc": "Cohere Command-R，对话，7B 档，约 5.06 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.06,
+  "ref_tag": "7b",
+  "pulls": 327400,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "olmo-3.1:32b",
+  "name": "olmo-3.1",
+  "display": "AI2 OLMo（32B）",
+  "desc": "AI2 OLMo，对话，32B 档，约 19.48 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 19.48,
+  "ref_tag": "32b",
+  "pulls": 292800,
+  "params_billion": 32.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-v2.5:236b",
+  "name": "deepseek-v2.5",
+  "display": "深度求索（236B）",
+  "desc": "深度求索，对话，236B 档，约 132.91 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 132.91,
+  "ref_tag": "236b",
+  "pulls": 291900,
+  "params_billion": 236.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "bge-large:335m",
+  "name": "bge-large",
+  "display": "BGE（335M）",
+  "desc": "BGE，向量检索，335M 档，约 0.67 GB。",
+  "caps": [
+   "embed"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.67,
+  "ref_tag": "335m",
+  "pulls": 287200,
+  "params_billion": 0.335,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "alfred:40b",
+  "name": "alfred",
+  "display": "alfred（40B）",
+  "desc": "alfred，对话，40B 档，约 23.81 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 23.81,
+  "ref_tag": "40b",
+  "pulls": 270700,
+  "params_billion": 40.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "smallthinker:3b",
+  "name": "smallthinker",
+  "display": "smallthinker（3B）",
+  "desc": "smallthinker，推理，3B 档，约 3.62 GB。",
+  "caps": [
+   "reason"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.62,
+  "ref_tag": "3b",
+  "pulls": 261899,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "kimi-k2.7-code:cloud",
+  "name": "kimi-k2.7-code",
+  "display": "kimi-k2.7-code（cloud）",
+  "desc": "kimi-k2.7-code，代码，cloud 档。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.0,
+  "ref_tag": "cloud",
+  "pulls": 243100,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "muse-glimmer:30b",
+  "name": "muse-glimmer",
+  "display": "muse-glimmer（30B）",
+  "desc": "muse-glimmer，对话，30B 档，约 18.16 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 18.16,
+  "ref_tag": "30b",
+  "pulls": 233600,
+  "params_billion": 30.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "command-a:111b",
+  "name": "command-a",
+  "display": "command-a（111B）",
+  "desc": "command-a，对话，111B 档，约 67.14 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 67.14,
+  "ref_tag": "111b",
+  "pulls": 230600,
+  "params_billion": 111.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "cogito-2.1:671b",
+  "name": "cogito-2.1",
+  "display": "cogito-2.1（671B）",
+  "desc": "cogito-2.1，对话，671B 档，约 1342.26 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1342.26,
+  "ref_tag": "671b",
+  "pulls": 224100,
+  "params_billion": 671.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "command-r7b-arabic:7b",
+  "name": "command-r7b-arabic",
+  "display": "Cohere Command-R（7B）",
+  "desc": "Cohere Command-R，对话，7B 档，约 5.06 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.06,
+  "ref_tag": "7b",
+  "pulls": 206100,
+  "params_billion": 7.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "medgemma1.5:4b",
+  "name": "medgemma1.5",
+  "display": "medgemma1.5（4B）",
+  "desc": "medgemma1.5，对话，4B 档，约 3.34 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.34,
+  "ref_tag": "4b",
+  "pulls": 200400,
+  "params_billion": 4.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "functiongemma:270m",
+  "name": "functiongemma",
+  "display": "functiongemma（270M）",
+  "desc": "functiongemma，对话，270M 档，约 0.3 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.3,
+  "ref_tag": "270m",
+  "pulls": 192400,
+  "params_billion": 0.27,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nemotron-3.5-lightning:30b",
+  "name": "nemotron-3.5-lightning",
+  "display": "NVIDIA Nemotron（30B）",
+  "desc": "NVIDIA Nemotron，对话，30B 档，约 25.43 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 25.43,
+  "ref_tag": "30b",
+  "pulls": 185800,
+  "params_billion": 30.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "laguna-s-2.1:latest",
+  "name": "laguna-s-2.1",
+  "display": "laguna-s-2.1（latest）",
+  "desc": "laguna-s-2.1，对话，latest 档，约 96.03 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 96.03,
+  "ref_tag": "latest",
+  "pulls": 163900,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "lfm2.5:8b",
+  "name": "lfm2.5",
+  "display": "lfm2.5（8B）",
+  "desc": "lfm2.5，对话，8B 档，约 5.16 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.16,
+  "ref_tag": "8b",
+  "pulls": 161900,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gpt-oss-safeguard:20b",
+  "name": "gpt-oss-safeguard",
+  "display": "gpt-oss-safeguard（20B）",
+  "desc": "gpt-oss-safeguard，对话，20B 档，约 13.79 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 13.79,
+  "ref_tag": "20b",
+  "pulls": 158400,
+  "params_billion": 20.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "gpt-oss-safeguard:120b",
+  "name": "gpt-oss-safeguard",
+  "display": "gpt-oss-safeguard（120B）",
+  "desc": "gpt-oss-safeguard，对话，120B 档，约 65.37 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 65.37,
+  "ref_tag": "120b",
+  "pulls": 158400,
+  "params_billion": 120.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "glm-5.3-flash:cloud",
+  "name": "glm-5.3-flash",
+  "display": "智谱 GLM（cloud）",
+  "desc": "智谱 GLM，对话，cloud 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.0,
+  "ref_tag": "cloud",
+  "pulls": 153600,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nemotron-cascade-2:30b",
+  "name": "nemotron-cascade-2",
+  "display": "NVIDIA Nemotron（30B）",
+  "desc": "NVIDIA Nemotron，对话，30B 档，约 24.27 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 24.27,
+  "ref_tag": "30b",
+  "pulls": 149400,
+  "params_billion": 30.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "qwen3.8-flash-next:125b-mlx",
+  "name": "qwen3.8-flash-next",
+  "display": "通义千问 3（125B）",
+  "desc": "通义千问 3，对话，125B 档，约 104.85 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 104.85,
+  "ref_tag": "125b-mlx",
+  "pulls": 147700,
+  "params_billion": 125.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "mistral-large-3:675b-cloud",
+  "name": "mistral-large-3",
+  "display": "Mistral（675B）",
+  "desc": "Mistral，对话，675B 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 1350.0,
+  "ref_tag": "675b-cloud",
+  "pulls": 120300,
+  "params_billion": 675.0,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "laguna-xs-2.1:latest",
+  "name": "laguna-xs-2.1",
+  "display": "laguna-xs-2.1（latest）",
+  "desc": "laguna-xs-2.1，对话，latest 档，约 20.27 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 20.27,
+  "ref_tag": "latest",
+  "pulls": 118600,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "nemotron-3-ultra:cloud",
+  "name": "nemotron-3-ultra",
+  "display": "NVIDIA Nemotron（cloud）",
+  "desc": "NVIDIA Nemotron，对话，cloud 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.0,
+  "ref_tag": "cloud",
+  "pulls": 107100,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "kimi-k3:cloud",
+  "name": "kimi-k3",
+  "display": "kimi-k3（cloud）",
+  "desc": "kimi-k3，对话，cloud 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 0.0,
+  "ref_tag": "cloud",
+  "pulls": 90100,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite4.2:3b",
+  "name": "granite4.2",
+  "display": "IBM Granite（3B）",
+  "desc": "IBM Granite，对话，3B 档，约 2.24 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 2.24,
+  "ref_tag": "3b",
+  "pulls": 88800,
+  "params_billion": 3.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite4.2:8b",
+  "name": "granite4.2",
+  "display": "IBM Granite（8B）",
+  "desc": "IBM Granite，对话，8B 档，约 5.35 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 5.35,
+  "ref_tag": "8b",
+  "pulls": 88800,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite4.2:30b",
+  "name": "granite4.2",
+  "display": "IBM Granite（30B）",
+  "desc": "IBM Granite，对话，30B 档，约 17.72 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 17.72,
+  "ref_tag": "30b",
+  "pulls": 88800,
+  "params_billion": 30.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "glm-5.3:cloud",
+  "name": "glm-5.3",
+  "display": "智谱 GLM（cloud）",
+  "desc": "智谱 GLM，对话，cloud 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.0,
+  "ref_tag": "cloud",
+  "pulls": 61200,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "north-mini-code-1.0:latest",
+  "name": "north-mini-code-1.0",
+  "display": "north-mini-code-1.0（latest）",
+  "desc": "north-mini-code-1.0，代码，latest 档，约 18.59 GB。",
+  "caps": [
+   "code"
+  ],
+  "chinese": false,
+  "ref_size_gb": 18.59,
+  "ref_tag": "latest",
+  "pulls": 59300,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "minicpm-v4.6:1b",
+  "name": "minicpm-v4.6",
+  "display": "面壁 MiniCPM（1B）",
+  "desc": "面壁 MiniCPM，视觉理解、对话，1B 档，约 1.64 GB。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 1.64,
+  "ref_tag": "1b",
+  "pulls": 55300,
+  "params_billion": 1.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "deepseek-v4.1-flash:cloud",
+  "name": "deepseek-v4.1-flash",
+  "display": "深度求索（cloud）",
+  "desc": "深度求索，对话，cloud 档。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 0.0,
+  "ref_tag": "cloud",
+  "pulls": 51800,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "estimate",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "minicpm-v4.5:8b",
+  "name": "minicpm-v4.5",
+  "display": "面壁 MiniCPM（8B）",
+  "desc": "面壁 MiniCPM，视觉理解、对话，8B 档，约 6.12 GB。",
+  "caps": [
+   "vision",
+   "chat"
+  ],
+  "chinese": true,
+  "ref_size_gb": 6.12,
+  "ref_tag": "8b",
+  "pulls": 44100,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "laguna-xs.2:latest",
+  "name": "laguna-xs.2",
+  "display": "laguna-xs.2（latest）",
+  "desc": "laguna-xs.2，对话，latest 档，约 23.1 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 23.1,
+  "ref_tag": "latest",
+  "pulls": 31500,
+  "params_billion": null,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "granite4.1-guardian:8b",
+  "name": "granite4.1-guardian",
+  "display": "IBM Granite（8B）",
+  "desc": "IBM Granite，对话，8B 档，约 6.88 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 6.88,
+  "ref_tag": "8b",
+  "pulls": 27700,
+  "params_billion": 8.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "medgemma:4b",
+  "name": "medgemma",
+  "display": "medgemma（4B）",
+  "desc": "medgemma，对话，4B 档，约 3.34 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 3.34,
+  "ref_tag": "4b",
+  "pulls": null,
+  "params_billion": 4.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ },
+ {
+  "id": "medgemma:27b",
+  "name": "medgemma",
+  "display": "medgemma（27B）",
+  "desc": "medgemma，对话，27B 档，约 17.4 GB。",
+  "caps": [
+   "chat"
+  ],
+  "chinese": false,
+  "ref_size_gb": 17.4,
+  "ref_tag": "27b",
+  "pulls": null,
+  "params_billion": 27.0,
+  "origin": "scraped",
+  "size_source": "registry",
+  "generated_at": "2026-09-26"
+ }
+]

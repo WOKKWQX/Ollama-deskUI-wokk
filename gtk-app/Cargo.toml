@@ -1,6 +1,6 @@
 [package]
 name = "offideskollama"
-version = "3.6.2"
+version = "4.0.0"
 edition = "2021"
 description = "offideskOllama — Ollama 图形化控制台（GTK4 原生版）"
 

@@ -20,7 +20,7 @@
 //! 诚实边界（沿用）：体积一律标注「参考」；官方库标签体积取不到时显示「未知」，
 //! 不伪造；不显示任何伪造的下载量/热度。
 
-use crate::ollama::catalog::{Capability, Catalog, CatalogModel, Category};
+use crate::ollama::catalog::{score_model, Capability, Catalog, CatalogModel, Category};
 use crate::ollama::hardware::{
     detect_hardware, fit_for, load_hardware, save_hardware, Fit, HardwareProfile,
 };
@@ -70,9 +70,10 @@ impl Task {
     }
 }
 
-/// 排序方式（v3.5.0 新增：此前分类视图完全按种子顺序，无法排序）
+/// 排序方式。V4.0.0 起「推荐评分」（白盒三维：任务+适配+官方热度）为默认。
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum SortMode {
+    Score,
     Default,
     FitFirst,
     SizeAsc,
@@ -81,21 +82,30 @@ enum SortMode {
 }
 
 impl SortMode {
-    fn labels() -> [&'static str; 5] {
-        ["默认排序", "适配优先", "体积小→大", "体积大→小", "按名称"]
+    fn labels() -> [&'static str; 6] {
+        [
+            "推荐评分",
+            "默认排序",
+            "适配优先",
+            "体积小→大",
+            "体积大→小",
+            "按名称",
+        ]
     }
     fn from_index(i: u32) -> Self {
         match i {
-            1 => SortMode::FitFirst,
-            2 => SortMode::SizeAsc,
-            3 => SortMode::SizeDesc,
-            4 => SortMode::Name,
-            _ => SortMode::Default,
+            1 => SortMode::Default,
+            2 => SortMode::FitFirst,
+            3 => SortMode::SizeAsc,
+            4 => SortMode::SizeDesc,
+            5 => SortMode::Name,
+            _ => SortMode::Score,
         }
     }
 }
 
 /// 卡片承载的内容：精选条目，或本机已装但不在精选库中的真实条目。
+#[derive(Clone)]
 enum CardItem {
     Catalog(CatalogModel),
     Local(ModelInfo),
@@ -145,6 +155,8 @@ struct DiscoverState {
     toggles: RefCell<Vec<(Task, ToggleButton)>>,
     setting_toggle: RefCell<bool>,
     flow: FlowBox,
+    /// 「显示更多」分页按钮（千条规模下首屏只渲染前 60 张卡）
+    more_btn: Button,
     footer: Label,
     hw_label: Label,
     compare_btn: RefCell<Button>,
@@ -153,6 +165,10 @@ struct DiscoverState {
     official_entry: gtk4::Entry,
     official_status: Label,
     official_list: gtk4::Box,
+    /// 分页容量：当前视图最多渲染的卡片数（滚动「显示更多」递增）
+    page_cap: RefCell<usize>,
+    /// 最近一次筛选结果的完整集合（「显示更多」直接增量重渲染，免重算）
+    last_items: RefCell<Vec<CardItem>>,
 }
 
 /// 构建「云库」页内容，返回可加入 gtk4::Stack 的控件
@@ -174,6 +190,15 @@ pub fn build_discover_page(
         .column_spacing(12)
         .row_spacing(12)
         .halign(gtk4::Align::Fill)
+        .build();
+
+    // 「显示更多」：千条规模分页加载（创建需早于 DiscoverState）
+    let more_btn = Button::builder()
+        .label("显示更多")
+        .css_classes(vec!["flat"])
+        .visible(false)
+        .halign(gtk4::Align::Center)
+        .margin_bottom(20)
         .build();
 
     let footer = Label::builder()
@@ -221,7 +246,7 @@ pub fn build_discover_page(
         installed: RefCell::new(Vec::new()),
         category: RefCell::new(Category::All),
         task: RefCell::new(None),
-        sort: RefCell::new(SortMode::Default),
+        sort: RefCell::new(SortMode::Score),
         search: RefCell::new(String::new()),
         search_gen: RefCell::new(0),
         selected: RefCell::new(Vec::new()),
@@ -229,6 +254,9 @@ pub fn build_discover_page(
         toggles: RefCell::new(Vec::new()),
         setting_toggle: RefCell::new(false),
         flow: flow.clone(),
+        more_btn: more_btn.clone(),
+        page_cap: RefCell::new(60),
+        last_items: RefCell::new(Vec::new()),
         footer: footer.clone(),
         hw_label: hw_label.clone(),
         compare_btn: RefCell::new(Button::builder().label("对比 (0)").build()),
@@ -431,12 +459,25 @@ pub fn build_discover_page(
     hw_row.append(&manual_btn);
 
     // ---- Stack 三页：卡片 / 空状态 / 官方库 ----
+    // 千条规模分页：首屏 60 张，其余走「显示更多」（按钮已在 flow 旁创建）
+    let cards_box = gtk4::Box::builder().orientation(Orientation::Vertical).build();
+    cards_box.append(&flow);
+    cards_box.append(&more_btn);
     let flow_scroll = ScrolledWindow::builder()
-        .child(&flow)
+        .child(&cards_box)
         .vexpand(true)
         .hscrollbar_policy(gtk4::PolicyType::Never)
         .build();
     stack.add_named(&flow_scroll, Some("cards"));
+
+    {
+        let st = Rc::clone(&st);
+        more_btn.connect_clicked(move |_| {
+            *st.page_cap.borrow_mut() += 60;
+            let items = st.last_items.borrow().clone();
+            render_cards(&st, &items);
+        });
+    }
 
     let empty_box = gtk4::Box::builder()
         .orientation(Orientation::Vertical)
@@ -814,6 +855,7 @@ fn card_widget(st: &Rc<DiscoverState>, item: &CardItem) -> gtk4::Box {
 /// 按当前筛选/排序重建卡片网格
 fn apply_filter(st: &Rc<DiscoverState>) {
     let q = st.search.borrow().trim().to_string();
+    *st.page_cap.borrow_mut() = 60; // 视图变化后重置分页
 
     // 无搜索词：分类/任务视图
     if q.is_empty() {
@@ -826,6 +868,7 @@ fn apply_filter(st: &Rc<DiscoverState>) {
         } else {
             let scope = view_scope(st);
             let n = items.len();
+            *st.last_items.borrow_mut() = items.clone();
             render_cards(st, &items);
             st.stack.set_visible_child_name("cards");
             update_footer(st, Some(n), &scope);
@@ -851,6 +894,7 @@ fn apply_filter(st: &Rc<DiscoverState>) {
         update_footer(st, Some(0), &format!("搜索「{q}」"));
     } else {
         let n = hits.len();
+        *st.last_items.borrow_mut() = hits.clone();
         render_cards(st, &hits);
         st.stack.set_visible_child_name("cards");
         update_footer(st, Some(n), &format!("搜索「{q}」"));
@@ -892,7 +936,7 @@ fn resolve_items(st: &Rc<DiscoverState>) -> Vec<CardItem> {
     v
 }
 
-/// 排序（v3.5.0 新增）
+/// 排序（v4.0.0：新增白盒评分，并设为默认）
 fn apply_sort(st: &Rc<DiscoverState>, items: &mut [CardItem]) {
     let mode = *st.sort.borrow();
     if mode == SortMode::Default {
@@ -902,6 +946,21 @@ fn apply_sort(st: &Rc<DiscoverState>, items: &mut [CardItem]) {
     let prof = st.profile.borrow().clone();
     match mode {
         SortMode::Default => {}
+        SortMode::Score => {
+            let maxp = st.catalog.borrow().max_pulls();
+            let task_cap = (*st.task.borrow()).map(|t| t.cap());
+            items.sort_by(|a, b| {
+                let sa = score_item(a, task_cap, &prof, maxp);
+                let sb = score_item(b, task_cap, &prof, maxp);
+                sb.partial_cmp(&sa)
+                    .unwrap_or(std::cmp::Ordering::Equal)
+                    .then_with(|| {
+                        fit_for(b.size_bytes(), &prof)
+                            .rank()
+                            .cmp(&fit_for(a.size_bytes(), &prof).rank())
+                    })
+            });
+        }
         SortMode::FitFirst => items.sort_by(|a, b| {
             fit_for(b.size_bytes(), &prof)
                 .rank()
@@ -926,15 +985,42 @@ fn apply_sort(st: &Rc<DiscoverState>, items: &mut [CardItem]) {
     }
 }
 
+/// 单卡评分总分（Catalog 条目走三维白盒评分；本机 Local 条目无热度/能力数据，只算适配）
+fn score_item(
+    item: &CardItem,
+    task: Option<Capability>,
+    prof: &HardwareProfile,
+    maxp: u64,
+) -> f64 {
+    match item {
+        CardItem::Catalog(m) => score_model(m, task, prof, maxp).total,
+        CardItem::Local(mi) => match fit_for(mi.size, prof) {
+            Fit::Smooth => 30.0,
+            Fit::Tight => 22.0,
+            Fit::CpuOnly => 8.0,
+            Fit::NoFit => -40.0,
+        },
+    }
+}
+
+/// 分页渲染：只画前 page_cap 张，剩余交给「显示更多」
 fn render_cards(st: &Rc<DiscoverState>, items: &[CardItem]) {
     let flow = &st.flow;
     while let Some(c) = flow.first_child() {
         flow.remove(&c);
     }
-    for it in items {
+    let cap = *st.page_cap.borrow();
+    let show_n = items.len().min(cap);
+    for it in &items[..show_n] {
         let card = card_widget(st, it);
         flow.insert(&card, -1);
     }
+    let rest = items.len() - show_n;
+    if rest > 0 {
+        st.more_btn
+            .set_label(&format!("显示更多（还有 {rest} 条）"));
+    }
+    st.more_btn.set_visible(rest > 0);
 }
 
 /// 当前视图的描述（用于页脚）
@@ -1684,6 +1770,7 @@ fn show_recommend(st: &Rc<DiscoverState>) {
     );
 
     let mut fulls: Vec<String> = Vec::new();
+    let maxp = st.catalog.borrow().max_pulls();
     for m in &picks {
         let full = format!("{}:{}", m.name, m.ref_tag);
         fulls.push(full.clone());
@@ -1715,6 +1802,24 @@ fn show_recommend(st: &Rc<DiscoverState>) {
         }
         row.append(&install);
         vbox.append(&row);
+        // 白盒推荐理由：最多展示两条（适配 + 热度），全部可解释
+        let sb = score_model(m, None, &profile, maxp);
+        let reason_txt = sb
+            .reasons
+            .iter()
+            .take(2)
+            .cloned()
+            .collect::<Vec<_>>()
+            .join(" · ");
+        vbox.append(
+            &Label::builder()
+                .label(reason_txt)
+                .halign(gtk4::Align::Start)
+                .wrap(true)
+                .css_classes(vec!["caption", "dim-label"])
+                .margin_start(24)
+                .build(),
+        );
     }
 
     let install_all = Button::builder()
@@ -1960,14 +2065,15 @@ mod tests {
 
     #[test]
     fn sort_mode_index_maps_and_falls_back() {
-        assert_eq!(SortMode::from_index(0), SortMode::Default);
-        assert_eq!(SortMode::from_index(1), SortMode::FitFirst);
-        assert_eq!(SortMode::from_index(2), SortMode::SizeAsc);
-        assert_eq!(SortMode::from_index(3), SortMode::SizeDesc);
-        assert_eq!(SortMode::from_index(4), SortMode::Name);
-        // 越界回落到默认，不应 panic
-        assert_eq!(SortMode::from_index(99), SortMode::Default);
-        assert_eq!(SortMode::labels().len(), 5);
+        assert_eq!(SortMode::from_index(0), SortMode::Score);
+        assert_eq!(SortMode::from_index(1), SortMode::Default);
+        assert_eq!(SortMode::from_index(2), SortMode::FitFirst);
+        assert_eq!(SortMode::from_index(3), SortMode::SizeAsc);
+        assert_eq!(SortMode::from_index(4), SortMode::SizeDesc);
+        assert_eq!(SortMode::from_index(5), SortMode::Name);
+        // 越界回落到默认（推荐评分），不应 panic
+        assert_eq!(SortMode::from_index(99), SortMode::Score);
+        assert_eq!(SortMode::labels().len(), 6);
     }
 
     #[test]

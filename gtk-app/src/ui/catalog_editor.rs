@@ -22,6 +22,7 @@ use gtk4::{
     ScrolledWindow, SearchEntry, SelectionMode, SpinButton, Switch, Window,
 };
 use std::cell::RefCell;
+use std::collections::HashSet;
 use std::rc::Rc;
 
 /// 编辑器状态。行/按钮的回调一律持 `Weak`，避免 Rc 环导致窗口无法释放。
@@ -33,7 +34,12 @@ struct EditorState {
     query: RefCell<String>,
     /// 当前列表视图对应的 id 顺序（供「点击行」定位模型）
     visible: RefCell<Vec<String>>,
+    /// 分页容量：千条规模下列表只渲染前 N 行，滚动到底可加载更多
+    page_cap: RefCell<usize>,
+    /// 搜索防抖代际守卫：150ms 内连续输入只生效最后一次
+    search_gen: RefCell<u64>,
     list: ListBox,
+    more_btn: Button,
     status: Label,
 }
 
@@ -88,8 +94,18 @@ pub fn open_editor(parent: &gtk4::Window) {
         .css_classes(vec!["rich-list"])
         .build();
 
+    // 「显示更多」：千条规模分页加载，避免一次重建上千行
+    let more_btn = Button::builder()
+        .label("显示更多")
+        .css_classes(vec!["flat"])
+        .visible(false)
+        .build();
+    let list_wrap = Box::builder().orientation(Orientation::Vertical).build();
+    list_wrap.append(&list);
+    list_wrap.append(&more_btn);
+
     let scroll = ScrolledWindow::builder()
-        .child(&list)
+        .child(&list_wrap)
         .vexpand(true)
         .hscrollbar_policy(gtk4::PolicyType::Never)
         .build();
@@ -130,16 +146,39 @@ pub fn open_editor(parent: &gtk4::Window) {
         catalog: RefCell::new(Catalog::load()),
         query: RefCell::new(String::new()),
         visible: RefCell::new(Vec::new()),
+        page_cap: RefCell::new(100),
+        search_gen: RefCell::new(0),
         list: list.clone(),
+        more_btn: more_btn.clone(),
         status: status.clone(),
     });
 
-    // ---- 搜索 ----
+    // ---- 搜索（150ms 防抖：连续输入只重建最后一次）----
     {
         let st_w = Rc::downgrade(&st);
         search.connect_search_changed(move |e| {
+            let Some(st) = st_w.upgrade() else { return };
+            *st.query.borrow_mut() = e.text().to_string();
+            *st.page_cap.borrow_mut() = 100; // 视图变化后重置分页
+            *st.search_gen.borrow_mut() += 1;
+            let my_gen = *st.search_gen.borrow();
+            let st_w2 = st_w.clone(); // 内层闭包须持自己的 Weak，不可挪用外层捕获
+            gtk4::glib::timeout_add_local_once(std::time::Duration::from_millis(150), move || {
+                if let Some(st) = st_w2.upgrade() {
+                    if *st.search_gen.borrow() == my_gen {
+                        refresh(&st);
+                    }
+                }
+            });
+        });
+    }
+
+    // ---- 显示更多 ----
+    {
+        let st_w = Rc::downgrade(&st);
+        more_btn.connect_clicked(move |_| {
             if let Some(st) = st_w.upgrade() {
-                *st.query.borrow_mut() = e.text().to_string();
+                *st.page_cap.borrow_mut() += 100;
                 refresh(&st);
             }
         });
@@ -240,7 +279,7 @@ pub fn open_editor(parent: &gtk4::Window) {
     win.present();
 }
 
-/// 依当前搜索词重建列表
+/// 依当前搜索词重建列表（分页渲染；「已改」集合一次遍历算好，避免 O(n²)）
 fn refresh(st: &Rc<EditorState>) {
     while let Some(c) = st.list.first_child() {
         st.list.remove(&c);
@@ -254,15 +293,25 @@ fn refresh(st: &Rc<EditorState>) {
             cat.search(&query).into_iter().cloned().collect()
         }
     };
+    let modified_set: HashSet<String> = st.catalog.borrow().modified_ids();
     *st.visible.borrow_mut() = models.iter().map(|m| m.id.clone()).collect();
-    for m in &models {
-        st.list.append(&row_widget(st, m));
+    let cap = *st.page_cap.borrow();
+    let show_n = models.len().min(cap);
+    for m in &models[..show_n] {
+        st.list
+            .append(&row_widget(st, m, modified_set.contains(&m.id)));
     }
+    let rest = models.len() - show_n;
+    if rest > 0 {
+        st.more_btn
+            .set_label(&format!("显示更多（还有 {rest} 条）"));
+    }
+    st.more_btn.set_visible(rest > 0);
     update_status(st);
 }
 
 /// 单行：图标 + 标题/副标题 + 行尾控件（编辑 + 删除/恢复）
-fn row_widget(st: &Rc<EditorState>, m: &CatalogModel) -> ListBoxRow {
+fn row_widget(st: &Rc<EditorState>, m: &CatalogModel, modified: bool) -> ListBoxRow {
     let row = ListBoxRow::new();
     let hb = Box::builder()
         .orientation(Orientation::Horizontal)
@@ -270,7 +319,6 @@ fn row_widget(st: &Rc<EditorState>, m: &CatalogModel) -> ListBoxRow {
         .build();
 
     let builtin = Catalog::is_builtin(&m.id);
-    let modified = st.catalog.borrow().is_modified(&m.id);
 
     hb.append(
         &Image::builder()
@@ -578,6 +626,18 @@ fn open_form(
         let zh_sw = zh_sw.clone();
         let cap_btns = cap_btns.clone();
         let id = initial.map(|m| m.id.clone()).unwrap_or_default();
+        // 元数据字段不在表单里：编辑时从初值原样透传，避免保存后丢失热度/来源
+        let meta = initial
+            .map(|m| {
+                (
+                    m.pulls,
+                    m.params_billion,
+                    m.origin.clone(),
+                    m.size_source.clone(),
+                    m.generated_at.clone(),
+                )
+            })
+            .unwrap_or((None, None, String::new(), String::new(), String::new()));
         save.connect_clicked(move |_| {
             let name = name_e.text().trim().to_string();
             if name.is_empty() {
@@ -606,6 +666,11 @@ fn open_form(
                 chinese: zh_sw.is_active(),
                 ref_size_gb: size_sp.value(),
                 ref_tag: tag,
+                pulls: meta.0,
+                params_billion: meta.1,
+                origin: meta.2.clone(),
+                size_source: meta.3.clone(),
+                generated_at: meta.4.clone(),
             };
             on_submit(m);
             win_c.close();

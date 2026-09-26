@@ -1,20 +1,36 @@
-# Rust build artifacts
-/target/
-**/target/
-
-# Editor / OS
-*.swp
-*~
-.DS_Store
-
-# Local build output
-*.deb
-dist/
+# ---- Node ----
 node_modules/
+dist/
 
-# Project-internal (not part of source)
-软件包正式版交付文件夹-所有格式/
-.workbuddy/
+# ---- Rust 构建产物 ----
+src-tauri/target/
+src-tauri/gen/
+gtk-app/target/
 
-# Logs
+# ---- 手工 deb 打包暂存区 ----
+gtk-app/pkg/
+
+# ---- 构建产物（可由源码重建，不入库）----
+*.deb
+
+# ---- 离线安装包 / 第三方下载物（非源码）----
+用户帮你下载的/
+downloads/
+*.tar.xz
+
+# ---- 手动验证留下的截图 / 临时文件 ----
+gtk-app/shot_*.png
+gtk-app/shot_*.xwd
+gtk-app/tests_tmp/
+*.xwd
+
+# ---- 系统 ----
+.DS_Store
 *.log
+
+# ---- 工作区状态目录（AI 协作记忆/回收站，非源码）----
+.Trash-0/
+.codebuddy/
+.workbuddy/
+gtk-app/scripts/.cache/
+gtk-app/scripts/skipped.log

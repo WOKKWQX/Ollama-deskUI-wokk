@@ -16,6 +16,10 @@
 //!   一律在 UI 标注「参考」；详情页联网时再用 registry 真实体积覆盖。
 
 use serde::{Deserialize, Serialize};
+use std::collections::{HashMap, HashSet};
+use std::sync::OnceLock;
+
+use super::hardware::{Fit, HardwareProfile, fit_for};
 
 /// 模型能力标签
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
@@ -105,6 +109,21 @@ pub struct CatalogModel {
     pub ref_size_gb: f64,
     /// 默认推荐标签（用于「为你选」与 fit 估算）
     pub ref_tag: String,
+    /// 官方累计拉取量快照（采集日见 `generated_at`）；无数据为 None（诚实缺省，不补造）
+    #[serde(default)]
+    pub pulls: Option<u64>,
+    /// 参数量（十亿）。从标签名解析（如 7b→7.0），命名档（scout/mini）为 None
+    #[serde(default)]
+    pub params_billion: Option<f64>,
+    /// 条目来源："manual"（人工文案）| "scraped"（事实模板生成）
+    #[serde(default)]
+    pub origin: String,
+    /// 体积来源："registry"（实测）| "estimate"（估算）| "manual"（人工录入参考值）
+    #[serde(default)]
+    pub size_source: String,
+    /// 数据采集日期（ISO 快照标记，热度与体积均以此为时效口径）
+    #[serde(default)]
+    pub generated_at: String,
 }
 
 impl CatalogModel {
@@ -125,156 +144,18 @@ impl CatalogModel {
     }
 }
 
-/// 种子条目构造：id 由 `name:ref_tag` 派生，保证唯一（见 `seed_ids_are_unique` 测试）
-#[allow(clippy::too_many_arguments)]
-fn s(
-    name: &str,
-    display: &str,
-    desc: &str,
-    caps: &[Capability],
-    chinese: bool,
-    size: f64,
-    tag: &str,
-) -> CatalogModel {
-    CatalogModel {
-        id: format!("{name}:{tag}"),
-        name: name.to_string(),
-        display: display.to_string(),
-        desc: desc.to_string(),
-        caps: caps.to_vec(),
-        chinese,
-        ref_size_gb: size,
-        ref_tag: tag.to_string(),
-    }
+/// 内置种子：编译期嵌入 `catalog.json`（由 `scripts/build_catalog.py` 从 Ollama
+/// 官方源生成：家族×尺寸档真实条目 + 人工精修文案）。单一事实来源在数据文件。
+const SEED_JSON: &str = include_str!("catalog.json");
+
+fn seed_vec() -> &'static Vec<CatalogModel> {
+    static SEED: OnceLock<Vec<CatalogModel>> = OnceLock::new();
+    SEED.get_or_init(|| serde_json::from_str(SEED_JSON).expect("内置 catalog.json 解析失败"))
 }
 
-/// 内置精选种子（编译期）。用户升级应用即自动获得这里新增的条目。
+/// 内置精选种子。用户升级应用即自动获得新增条目。
 pub fn default_models() -> Vec<CatalogModel> {
-    use Capability::*;
-    vec![
-        // ---------- 中文系 ----------
-        s("qwen2.5", "通义千问 2.5", "阿里通义千问，中英文均衡，覆盖 0.5B~72B。", &[Chat, Tool], true, 4.7, "7b"),
-        s("qwen2.5", "通义千问 2.5（极速 0.5B）", "千问最小档，老机器也能跑，适合尝鲜。", &[Chat], true, 0.4, "0.5b"),
-        s("qwen2.5-coder", "通义千问代码 2.5", "代码专用，补全与改造能力强。", &[Code], true, 4.7, "7b"),
-        s("qwen2.5-coder", "通义千问代码 2.5（轻量 1.5B）", "代码专用小档，补全够用、占用低。", &[Code], true, 1.0, "1.5b"),
-        s("qwen2.5vl", "通义千问视觉 2.5", "读图多模态，支持图片问答与理解。", &[Vision, Chat], true, 6.0, "7b"),
-        s("qwen2.5-math", "通义千问数学 2.5", "数学推理专用，解题步骤清晰。", &[Reason], true, 4.4, "7b"),
-        s("qwen3", "通义千问 3", "新一代千问，推理与对话兼顾。", &[Chat, Tool, Reason], true, 5.0, "8b"),
-        s("qwen3-coder", "通义千问代码 3（30B）", "第三代代码模型，代理式编程能力强，体积偏大。", &[Code, Tool], true, 19.0, "30b"),
-        s("qwen3-vl", "通义千问视觉 3", "第三代多模态，图文理解与文档识别更强。", &[Vision, Chat], true, 5.5, "8b"),
-        s("qwq", "通义千问 QwQ（推理）", "千问推理专用，长链思考。", &[Reason, Tool], true, 20.0, "32b"),
-        s("deepseek-r1", "深度求索 R1（推理）", "强推理模型，擅长数学与逻辑推导。", &[Reason, Tool], true, 4.7, "7b"),
-        s("deepseek-llm", "深度求索 LLM", "DeepSeek 通用基座，中英文均衡。", &[Chat], true, 4.7, "7b"),
-        s("deepseek-coder-v2", "深度求索代码 V2", "代码与补全专用，覆盖多种语言。", &[Code], true, 8.9, "16b"),
-        s("deepseek-v3", "深度求索 V3（671B 巨量）", "旗舰级通用模型，体积巨大，普通机器跑不动。", &[Chat, Tool], true, 404.0, "671b"),
-        s("glm4", "智谱 GLM-4", "智谱通用对话，中文表现优秀。", &[Chat, Tool], true, 5.5, "9b"),
-        s("glm-4v", "智谱 GLM-4V（视觉）", "智谱多模态，支持图文理解。", &[Vision, Chat], true, 5.5, "9b"),
-        s("yi", "零一万物 Yi", "01.AI 通用模型，中文友好。", &[Chat], true, 3.8, "6b"),
-        s("yi-coder", "零一万物 Yi-Coder", "代码专用，长上下文补全。", &[Code], true, 5.2, "9b"),
-        s("baichuan2", "百川 2", "百川通用对话，中文优化。", &[Chat], true, 4.2, "7b"),
-        s("internlm2", "书生·浦语 2", "上海 AI Lab 通用模型，中文扎实。", &[Chat], true, 4.5, "7b"),
-        s("codegeex4", "智谱 CodeGeeX4", "代码生成专用，多语言覆盖。", &[Code], true, 5.5, "9b"),
-        s("minicpm-v", "面壁 MiniCPM-V（视觉）", "超轻量多模态，手机级设备可跑。", &[Vision, Chat], true, 4.8, "2.6"),
-        s("bge-m3", "BGE-M3（嵌入）", "多语言向量模型，检索与知识库首选。", &[Embed], true, 1.2, "latest"),
-        s("bge-large", "BGE-Large（嵌入）", "经典中文检索嵌入，体积小。", &[Embed], true, 0.67, "latest"),
-        s("qwen3", "通义千问 3（4B）", "千问 3 轻量档，小显存也能吃推理与工具调用。", &[Chat, Tool, Reason], true, 2.6, "4b"),
-        s("qwen3", "通义千问 3（14B）", "千问 3 中档，较 8B 档质量跃升，16GB 级设备甜点。", &[Chat, Tool, Reason], true, 9.3, "14b"),
-        s("qwen3", "通义千问 3（30B MoE）", "总参数 30B 仅激活 3B，速度接近小模型、质量更高。", &[Chat, Tool, Reason], true, 19.0, "30b-a3b"),
-        s("qwen2.5", "通义千问 2.5（3B）", "千问 2.5 轻量档，笔记本级设备流畅对话。", &[Chat, Tool], true, 1.9, "3b"),
-        s("qwen2.5", "通义千问 2.5（14B）", "千问 2.5 中档，质量接近更大参数量模型。", &[Chat, Tool], true, 9.0, "14b"),
-        s("qwen2.5", "通义千问 2.5（32B）", "千问 2.5 大档，追求质量的上限选择。", &[Chat, Tool], true, 20.0, "32b"),
-        s("qwen2", "通义千问 2（7B）", "上一代千问，老设备与兼容场景备选。", &[Chat], true, 4.4, "7b"),
-        s("qwen2.5-coder", "通义千问代码 2.5（3B）", "代码轻量档，日常补全顺手、占用低。", &[Code], true, 1.9, "3b"),
-        s("qwen2.5-coder", "通义千问代码 2.5（14B）", "代码中档，整文件改写与仓库级理解更稳。", &[Code], true, 9.0, "14b"),
-        s("codeqwen", "千问代码 CodeQwen", "千问代码初代 7B，老牌补全选择。", &[Code], true, 4.2, "7b"),
-        s("deepseek-r1", "深度求索 R1（1.5B 蒸馏）", "最小推理档，老机器也能跑思维链。", &[Reason], true, 1.1, "1.5b"),
-        s("deepseek-r1", "深度求索 R1（8B 蒸馏）", "Llama3.1 底蒸馏，8GB 显存推理入门首选。", &[Reason, Tool], true, 4.9, "8b"),
-        s("deepseek-r1", "深度求索 R1（14B）", "Qwen 底蒸馏，中档机器的推理甜点。", &[Reason, Tool], true, 9.0, "14b"),
-        s("deepseek-r1", "深度求索 R1（32B）", "Qwen 底蒸馏，大显存机器的推理主力。", &[Reason, Tool], true, 20.0, "32b"),
-        s("deepseek-r1", "深度求索 R1（70B 蒸馏）", "Llama 底蒸馏，顶级推理质量，需大显存或纯 CPU 慢跑。", &[Reason, Tool], true, 40.0, "70b"),
-        s("deepseek-coder", "深度求索代码 1.5", "初代代码模型，老机器补全仍可用。", &[Code], true, 3.8, "6.7b"),
-        s("deepseek-v2", "深度求索 V2 Lite", "MoE 架构轻量版，激活参数少、吞吐高。", &[Chat, Code], true, 8.9, "16b"),
-        s("yi", "零一万物 Yi（9B）", "Yi 中档，中英双语扎实。", &[Chat], true, 5.3, "9b"),
-        s("yi", "零一万物 Yi（34B）", "Yi 大档，长文本理解好，需大内存。", &[Chat], true, 20.0, "34b"),
-        s("baichuan2", "百川 2（13B）", "百川中档，中文问答稳。", &[Chat], true, 7.4, "13b"),
-        s("minicpm-v", "面壁 MiniCPM-V 2.6", "8B 级多模态，读图与 OCR 强、体积小。", &[Vision, Chat], true, 5.5, "8b"),
-        // ---------- 国际系 ----------
-        s("llama3.1", "Meta Llama 3.1", "Meta 主力通用模型，生态成熟。", &[Chat, Tool], false, 4.7, "8b"),
-        s("llama3.2", "Meta Llama 3.2", "轻量通用，1B/3B 适合边缘设备。", &[Chat, Tool], false, 2.0, "3b"),
-        s("llama3.2", "Meta Llama 3.2（1B 极速）", "Llama 最小档，极省资源。", &[Chat], false, 1.3, "1b"),
-        s("llama3.2-vision", "Meta Llama 3.2（视觉）", "Llama 多模态，图片问答。", &[Vision, Chat], false, 7.0, "11b"),
-        s("llama3.3", "Meta Llama 3.3", "Llama 新一代，质量更高（体积大）。", &[Chat, Tool], false, 43.0, "70b"),
-        s("llama4", "Meta Llama 4 Scout", "Llama 4 稀疏专家，多模态但体量巨大。", &[Chat, Tool, Vision], false, 67.0, "scout"),
-        s("gemma2", "谷歌 Gemma 2", "谷歌开放模型，2B/9B 均衡。", &[Chat], false, 5.4, "9b"),
-        s("gemma2", "谷歌 Gemma 2（2B）", "Gemma 2 轻量档，占用低。", &[Chat], false, 1.6, "2b"),
-        s("gemma3", "谷歌 Gemma 3（4B）", "Gemma 3 小档，原生多模态。", &[Chat, Vision], false, 3.3, "4b"),
-        s("gemma3", "谷歌 Gemma 3（12B）", "Gemma 3 中档，质量与体积平衡。", &[Chat, Vision], false, 8.1, "12b"),
-        s("gemma3", "谷歌 Gemma 3（27B）", "Gemma 3 大档，质量更高、需大显存。", &[Chat, Vision], false, 17.0, "27b"),
-        s("phi4", "微软 Phi-4", "微软小钢炮，质量超规格。", &[Chat], false, 9.0, "14b"),
-        s("phi4-mini", "微软 Phi-4 Mini", "Phi-4 轻量档，小体积强推理。", &[Chat], false, 2.5, "3.8b"),
-        s("phi3", "微软 Phi-3", "轻量对话，mini 档极省资源。", &[Chat], false, 2.3, "mini"),
-        s("mistral", "Mistral 7B", "经典开放权重通用模型。", &[Chat], false, 4.1, "7b"),
-        s("ministral", "Mistral 小钢炮", "Mistral 轻量高效档。", &[Chat], false, 4.8, "8b"),
-        s("mistral-nemo", "Mistral Nemo 12B", "长上下文通用模型，多语言好。", &[Chat, Tool], false, 7.1, "12b"),
-        s("mistral-small3.1", "Mistral Small 3.1", "中小体积强通用，工具调用佳。", &[Chat, Tool], false, 15.0, "24b"),
-        s("devstral", "Mistral Devstral", "面向代理式编程的代码模型。", &[Code, Tool], false, 14.0, "24b"),
-        s("mixtral", "Mixtral 8x7B", "稀疏专家模型，质量高但体量大。", &[Chat, Tool], false, 26.0, "8x7b"),
-        s("command-r", "Cohere Command-R", "擅长检索增强与工具调用。", &[Chat, Tool], false, 4.7, "7b"),
-        s("command-r-plus", "Cohere Command-R+", "Command 大档，检索增强更强。", &[Chat, Tool], false, 59.0, "104b"),
-        s("codellama", "Code Llama", "Meta 代码专用模型。", &[Code], false, 3.8, "7b"),
-        s("codegemma", "谷歌 CodeGemma", "代码补全与生成专用。", &[Code], false, 5.0, "7b"),
-        s("starcoder2", "StarCoder 2", "代码补全与生成专用。", &[Code], false, 4.2, "7b"),
-        s("granite3", "IBM Granite 3", "IBM 企业级通用模型。", &[Chat, Tool], false, 4.7, "8b"),
-        s("granite3.3", "IBM Granite 3.3", "Granite 新版，推理与工具兼顾。", &[Chat, Tool], false, 4.9, "8b"),
-        s("falcon", "Falcon", "TII 开放权重通用模型。", &[Chat], false, 4.5, "7b"),
-        s("openchat", "OpenChat", "微调对话模型，体验轻快。", &[Chat], false, 4.1, "7b"),
-        s("zephyr", "Zephyr 7B", "DPO 微调对话模型，风格利落。", &[Chat], false, 4.1, "7b"),
-        s("vicuna", "Vicuna 7B", "经典对话微调模型。", &[Chat], false, 3.8, "7b"),
-        s("orca-mini", "Orca Mini", "小体积对话，适合尝鲜。", &[Chat], false, 2.0, "3b"),
-        s("tinyllama", "TinyLlama", "1B 级超小模型，极速。", &[Chat], false, 1.1, "1b"),
-        s("smollm2", "SmolLM2（1.7B）", "HuggingFace 小模型，小巧好用。", &[Chat], false, 1.8, "1.7b"),
-        s("smollm2", "SmolLM2（360M 超轻）", "超小体积，适合极限省资源。", &[Chat], false, 0.23, "360m"),
-        s("dolphin3", "Dolphin 3", "无拘束微调模型，指令跟随好。", &[Chat], false, 4.9, "8b"),
-        s("nemotron-mini", "NVIDIA Nemotron Mini", "英伟达小模型，工具调用友好。", &[Chat], false, 2.7, "4b"),
-        s("llava", "LLaVA（视觉）", "早期多模态代表，图文问答。", &[Vision, Chat], false, 4.5, "7b"),
-        s("llava-llama3", "LLaVA-Llama3（视觉）", "基于 Llama3 的多模态，识图更准。", &[Vision, Chat], false, 5.5, "8b"),
-        s("moondream", "Moondream（视觉）", "超轻量视觉模型，边缘设备可跑。", &[Vision, Chat], false, 1.7, "1.8b"),
-        s("nomic-embed-text", "Nomic 嵌入", "经典文本向量模型。", &[Embed], false, 0.27, "latest"),
-        s("mxbai-embed-large", "MXBAi 嵌入（大）", "高质量英文嵌入。", &[Embed], false, 0.67, "latest"),
-        s("snowflake-arctic-embed", "Snowflake 嵌入", "Snowflake 检索嵌入。", &[Embed], false, 0.33, "latest"),
-        s("all-minilm", "All-MiniLM（嵌入）", "极小嵌入模型，速度优先。", &[Embed], false, 0.05, "33m"),
-        s("llama3.1", "Meta Llama 3.1（70B）", "Llama 3.1 大档，多语言通用质量上限，需大显存。", &[Chat, Tool], false, 40.0, "70b"),
-        s("gemma2", "谷歌 Gemma 2（27B）", "Gemma 2 大档，质量较 9B 档有明显跃升。", &[Chat], false, 16.0, "27b"),
-        s("gemma3", "谷歌 Gemma 3（1B）", "Gemma 3 最小档，低配设备也能跑。", &[Chat], false, 0.8, "1b"),
-        s("phi4-mini-reasoning", "微软 Phi-4 Mini 推理", "小体积数学推理，解题分步清晰。", &[Reason], false, 2.5, "3.8b"),
-        s("phi4-reasoning", "微软 Phi-4 推理", "Phi-4 推理版，长链思考更严谨。", &[Reason], false, 9.0, "14b"),
-        s("phi3.5", "微软 Phi-3.5", "Phi-3 系小升级，多语言理解更好。", &[Chat], false, 2.2, "3.8b"),
-        s("codestral", "Mistral Codestral", "代码主力档，80+ 编程语言补全。", &[Code], false, 13.0, "22b"),
-        s("codellama", "Code Llama（13B）", "代码中档，补全与解释均衡。", &[Code], false, 7.4, "13b"),
-        s("codellama", "Code Llama（34B）", "代码大档，质量更高、需大显存。", &[Code], false, 19.0, "34b"),
-        s("starcoder2", "StarCoder 2（3B）", "小档代码补全，占用极低。", &[Code], false, 1.7, "3b"),
-        s("starcoder2", "StarCoder 2（15B）", "代码大档，覆盖 600+ 语言。", &[Code], false, 8.5, "15b"),
-        s("granite-code", "IBM Granite Code", "IBM 代码专用，许可宽松适合商用。", &[Code], false, 4.6, "8b"),
-        s("aya-expanse", "Cohere Aya Expanse", "多语言对话强项，小语种表现突出。", &[Chat], false, 5.0, "8b"),
-        s("hermes3", "Hermes 3", "Nous 微调 Llama3.1，指令跟随更听话。", &[Chat, Tool], false, 4.7, "8b"),
-        s("wizardlm2", "WizardLM 2（7B）", "微软系微调，通用对话均衡。", &[Chat], false, 4.1, "7b"),
-        s("solar", "Upstage Solar", "韩系 10.7B，效率与质量兼顾。", &[Chat], false, 6.1, "10.7b"),
-        s("tinydolphin", "Tiny Dolphin", "1.1B 超小档，树莓派级设备可跑。", &[Chat], false, 0.8, "1.1b"),
-        s("dolphin-llama3", "Dolphin Llama3", "无拘束微调 Llama3，角色扮演常用。", &[Chat], false, 4.7, "8b"),
-        s("sqlcoder", "Defog SQLCoder", "自然语言转 SQL 专用模型。", &[Code], false, 4.4, "7b"),
-        s("magicoder", "Magicoder", "合成数据训练的代码模型，学术出身。", &[Code], false, 3.8, "7b"),
-        s("stable-code", "Stability Stable Code", "3B 代码补全，占用极低。", &[Code], false, 1.6, "3b"),
-        s("falcon3", "TII Falcon 3", "Falcon 新一代 7B，效率优先。", &[Chat], false, 4.5, "7b"),
-        s("olmo2", "AI2 OLMo 2", "全开放数据与权重训练，学术可信度高。", &[Chat], false, 4.5, "7b"),
-        s("tulu3", "AI2 Tülu 3", "AI2 微调 Llama，指令跟随严谨。", &[Chat, Tool], false, 4.9, "8b"),
-        s("exaone3.5", "LG Exaone 3.5", "LG 出品，长上下文与推理兼顾。", &[Chat, Reason], false, 4.7, "7.8b"),
-        s("marco-o1", "阿里 Marco-O1", "开放推理探索版，中英思维链。", &[Reason], true, 4.7, "7b"),
-        s("openthinker", "OpenThinker", "开放推理模型，长思考链输出。", &[Reason], false, 20.0, "32b"),
-        s("llava-phi3", "LLaVA-Phi3（视觉）", "超轻多模态，2-3GB 即可识图。", &[Vision, Chat], false, 2.9, "latest"),
-        s("llama3.2-vision", "Meta Llama 3.2 视觉（90B）", "Llama 视觉大档，识图质量最高档。", &[Vision, Chat], false, 55.0, "90b"),
-        s("paraphrase-multilingual", "多语言句向量（嵌入）", "句子级多语言向量，轻量检索可用。", &[Embed], false, 0.7, "latest"),
-        s("mathstral", "Mistral Mathstral", "数学与理工专用，STEM 题更强。", &[Reason], false, 4.1, "7b"),
-    ]
+    seed_vec().clone()
 }
 
 /// 中文别名 → 检索关键词（帮助中文用户用中文找模型）
@@ -341,18 +222,45 @@ enum Imported {
 /// 运行时目录：内置种子为底 + 用户叠加。
 pub struct Catalog {
     models: Vec<CatalogModel>,
+    /// 与 models 同序的搜索干草堆（构建时预拼小写，千条规模搜索零临时串）
+    hay: Vec<String>,
+}
+
+fn build_hay(models: &[CatalogModel]) -> Vec<String> {
+    models
+        .iter()
+        .map(|m| {
+            format!(
+                "{} {} {} {}",
+                m.name,
+                m.display,
+                m.desc,
+                if m.chinese { "中文" } else { "" }
+            )
+            .to_lowercase()
+        })
+        .collect()
 }
 
 impl Catalog {
+    fn from_vec(models: Vec<CatalogModel>) -> Self {
+        let hay = build_hay(&models);
+        Self { models, hay }
+    }
+
     /// 仅内置种子（不读用户文件）
     pub fn default_only() -> Self {
-        Self { models: default_models() }
+        Self::from_vec(default_models())
     }
 
     /// 内置种子 + 用户叠加文件
     pub fn load() -> Self {
+        Self::load_with_overlay(&Self::load_overlay())
+    }
+
+    /// 指定叠加层的加载（测试可注入，不触碰真实 HOME）
+    pub fn load_with_overlay(ov: &UserOverlay) -> Self {
         let mut models = default_models();
-        let ov = Self::load_overlay();
         for o in &ov.overrides {
             if let Some(slot) = models.iter_mut().find(|m| m.id == o.id) {
                 *slot = o.clone();
@@ -363,7 +271,7 @@ impl Catalog {
                 models.push(a.clone());
             }
         }
-        Self { models }
+        Self::from_vec(models)
     }
 
     fn user_path() -> std::path::PathBuf {
@@ -458,6 +366,18 @@ impl Catalog {
                 .unwrap_or(false),
             None => false,
         }
+    }
+
+    /// 一次遍历返回全部「被改过的内置条目」id 集合。
+    /// 千条规模下供编辑器列表重建使用，避免逐行 O(n) 查询退化成 O(n²)。
+    pub fn modified_ids(&self) -> HashSet<String> {
+        self.models
+            .iter()
+            .filter_map(|m| match seed_by_id(&m.id) {
+                Some(seed) if !m.same_content(seed) => Some(m.id.clone()),
+                _ => None,
+            })
+            .collect()
     }
 
     /// 为一个新条目生成不冲突的 id
@@ -621,7 +541,8 @@ impl Catalog {
             .collect()
     }
 
-    /// 搜索：匹配模型名 / 中文名 / 简介；支持中文别名替换
+    /// 搜索：匹配模型名 / 中文名 / 简介；支持中文别名替换。
+    /// 干草堆在目录构建时预拼，千条规模下每次搜索零临时串拼接。
     pub fn search(&self, query: &str) -> Vec<&CatalogModel> {
         let q = query.trim().to_lowercase();
         if q.is_empty() {
@@ -630,18 +551,17 @@ impl Catalog {
         let expanded = apply_alias(&q);
         self.models
             .iter()
-            .filter(|m| {
-                let hay = format!(
-                    "{} {} {} {}",
-                    m.name,
-                    m.display,
-                    m.desc,
-                    if m.chinese { "中文" } else { "" }
-                )
-                .to_lowercase();
-                hay.contains(&expanded) || m.name.to_lowercase().contains(&expanded)
+            .enumerate()
+            .filter(|(i, m)| {
+                self.hay[*i].contains(&expanded) || m.name.to_lowercase().contains(&expanded)
             })
+            .map(|(_, m)| m)
             .collect()
+    }
+
+    /// 目录中最大的官方 pulls 值（热度归一化分母；无数据为 0）
+    pub fn max_pulls(&self) -> u64 {
+        self.models.iter().filter_map(|m| m.pulls).max().unwrap_or(0)
     }
 
     /// 按模型名取目录项（取第一个匹配，用于详情/安装默认值）
@@ -651,13 +571,103 @@ impl Catalog {
     }
 }
 
-/// 在内置种子里按 id 查（叠加匹配的唯一依据）
+/// 在内置种子里按 id 查（叠加匹配的唯一依据）。
+/// 种子 Vec 用 OnceLock 缓存、id→下标用 HashMap 索引，千条规模 O(1) 命中。
 fn seed_by_id(id: &str) -> Option<&'static CatalogModel> {
-    // 用 OnceLock 缓存种子，避免每次比较都重建整份 Vec
-    use std::sync::OnceLock;
-    static SEED: OnceLock<Vec<CatalogModel>> = OnceLock::new();
-    let seed = SEED.get_or_init(default_models);
-    seed.iter().find(|m| m.id == id)
+    static INDEX: OnceLock<HashMap<String, usize>> = OnceLock::new();
+    let seed = seed_vec();
+    let idx = INDEX.get_or_init(|| {
+        seed.iter().enumerate().map(|(i, m)| (m.id.clone(), i)).collect()
+    });
+    idx.get(id).map(|&i| &seed[i])
+}
+
+// ============================================================
+// 白盒评分推荐（V4.0.0）
+// ============================================================
+
+/// 评分明细：每一维分数与对应的中文理由，全部可解释、可复现。
+#[derive(Debug, Clone)]
+pub struct ScoreBreakdown {
+    pub total: f64,
+    pub task: f64,
+    pub fit: f64,
+    pub pop: f64,
+    pub reasons: Vec<String>,
+}
+
+/// 三维白盒评分：
+/// ① 任务匹配（0 / 40）：能力标签包含指定任务得满分；
+/// ② 硬件适配（30 / 22 / 8 / −40）：由既有 `fit_for` 判定派生；
+/// ③ 官方热度（0..30）：pulls 对数归一化，快照数据、缺失按 0 分诚实呈现。
+pub fn score_model(
+    m: &CatalogModel,
+    task: Option<Capability>,
+    prof: &HardwareProfile,
+    max_pulls: u64,
+) -> ScoreBreakdown {
+    let (task_score, mut reasons) = match task {
+        Some(t) => {
+            if m.caps.contains(&t) {
+                (
+                    40.0,
+                    vec![format!("能力匹配：支持{}（{}）", t.label(), m.caps_summary())],
+                )
+            } else {
+                (
+                    0.0,
+                    vec![format!("能力不含「{}」，任务匹配弱", t.label())],
+                )
+            }
+        }
+        None => (0.0, Vec::new()),
+    };
+
+    let fit = fit_for((m.ref_size_gb * 1e9) as u64, prof);
+    let fit_score = match fit {
+        Fit::Smooth => 30.0,
+        Fit::Tight => 22.0,
+        Fit::CpuOnly => 8.0,
+        Fit::NoFit => -40.0,
+    };
+    reasons.push(fit.explain().to_string());
+
+    let pop_score = match m.pulls {
+        Some(p) if max_pulls > 0 && p > 0 => {
+            let v = 30.0 * (1.0 + p as f64).log10() / (1.0 + max_pulls as f64).log10();
+            reasons.push(format!(
+                "官方累计拉取约 {}（热度指数 {:.0}/100，采集于 {}）",
+                human_pulls(p),
+                v / 30.0 * 100.0,
+                if m.generated_at.is_empty() { "未知日期" } else { &m.generated_at }
+            ));
+            v
+        }
+        _ => {
+            reasons.push("暂无官方热度数据".to_string());
+            0.0
+        }
+    };
+
+    ScoreBreakdown {
+        total: task_score + fit_score + pop_score,
+        task: task_score,
+        fit: fit_score,
+        pop: pop_score,
+        reasons,
+    }
+}
+
+fn human_pulls(p: u64) -> String {
+    if p >= 1_000_000_000 {
+        format!("{:.1}B", p as f64 / 1e9)
+    } else if p >= 1_000_000 {
+        format!("{:.1}M", p as f64 / 1e6)
+    } else if p >= 1_000 {
+        format!("{:.1}K", p as f64 / 1e3)
+    } else {
+        p.to_string()
+    }
 }
 
 #[cfg(test)]
@@ -679,7 +689,103 @@ mod tests {
 
     #[test]
     fn catalog_is_expanded() {
-        assert!(cat().len() >= 60, "种子应已扩充到 60+，实际 {}", cat().len());
+        let n = cat().len();
+        // 实抓 458 条（官方库 243 家族 × 尺寸档），软下限 400 防官方库规模波动误报
+        assert!(n >= 400, "V4.0.0 种子应扩到 400+，实际 {n}");
+    }
+
+    #[test]
+    fn manual_entries_preserved() {
+        // 人工文案一字不改：抽 3 条代表性条目核对 display 与 desc
+        let c = cat();
+        let get = |id: &str| c.all().iter().find(|m| m.id == id).unwrap().clone();
+        assert_eq!(get("qwen2.5:7b").display, "通义千问 2.5");
+        assert_eq!(get("deepseek-r1:7b").desc, "强推理模型，擅长数学与逻辑推导。");
+        assert_eq!(get("bge-m3:latest").chinese, true);
+        assert_eq!(get("llama3.1:8b").chinese, false);
+    }
+
+    #[test]
+    fn seed_has_heat_and_origin_metadata() {
+        let c = cat();
+        assert!(c.max_pulls() > 0, "应有条目带官方 pulls 热度");
+        assert!(c
+            .all()
+            .iter()
+            .any(|m| m.origin == "manual" && m.size_source == "manual"));
+        assert!(c.all().iter().any(|m| m.origin == "scraped"));
+    }
+
+    #[test]
+    fn overlay_old_file_compat() {
+        // 旧版叠加层 JSON 无 V4 新字段，serde(default) 必须兼容
+        let old = r#"{"added":[{"id":"user-x","name":"x","display":"X","desc":"d","caps":["chat"],"chinese":false,"ref_size_gb":1.0,"ref_tag":"latest"}],"overrides":[]}"#;
+        let ov: UserOverlay = serde_json::from_str(old).expect("旧叠加层应可解析");
+        assert_eq!(ov.added.len(), 1);
+        // 目录加载后仍能识别这条 added（id 不在种子里）
+        let c = Catalog::load_with_overlay(&ov);
+        assert_eq!(c.user_summary(), (1, 0));
+    }
+
+    #[test]
+    fn score_model_ranking() {
+        let prof = HardwareProfile::default();
+        let c = cat();
+        let with_heat = c
+            .all()
+            .iter()
+            .find(|m| m.pulls.is_some() && m.ref_size_gb > 0.0 && m.ref_size_gb < 5.0)
+            .expect("应存在带热度的小模型")
+            .clone();
+        let mut cold = with_heat.clone();
+        cold.id = "cold-test:1b".into();
+        cold.pulls = None;
+        let maxp = c.max_pulls();
+        let hot = score_model(&with_heat, None, &prof, maxp);
+        let none = score_model(&cold, None, &prof, maxp);
+        assert!(hot.pop > 0.0 && none.pop == 0.0);
+        assert!(hot.total > none.total);
+        assert!(!hot.reasons.is_empty() && !none.reasons.is_empty());
+    }
+
+    #[test]
+    fn score_model_task_match_dominates() {
+        let prof = HardwareProfile::default();
+        let c = cat();
+        let coder = c
+            .all()
+            .iter()
+            .find(|m| m.caps.contains(&Capability::Code))
+            .unwrap()
+            .clone();
+        let chat = c
+            .all()
+            .iter()
+            .find(|m| !m.caps.contains(&Capability::Code) && m.caps.contains(&Capability::Chat))
+            .unwrap()
+            .clone();
+        let s_code = score_model(&coder, Some(Capability::Code), &prof, c.max_pulls());
+        let s_chat = score_model(&chat, Some(Capability::Code), &prof, c.max_pulls());
+        assert!(s_code.task == 40.0 && s_chat.task == 0.0);
+        assert!(s_code.total > s_chat.total);
+    }
+
+    #[test]
+    fn score_reasons_nonempty_for_all() {
+        let prof = HardwareProfile::default();
+        let c = cat();
+        let maxp = c.max_pulls();
+        for m in c.all() {
+            let s = score_model(m, None, &prof, maxp);
+            assert!(!s.reasons.is_empty(), "{} 理由为空", m.id);
+        }
+    }
+
+    #[test]
+    fn search_uses_haystack() {
+        let c = cat();
+        assert!(c.search("千问").iter().any(|m| m.name.starts_with("qwen")));
+        assert!(c.search("嵌入").iter().any(|m| m.caps.contains(&Capability::Embed)));
     }
 
     #[test]
@@ -772,6 +878,11 @@ mod tests {
             chinese: false,
             ref_size_gb: 1.5,
             ref_tag: "latest".into(),
+            pulls: None,
+            params_billion: None,
+            origin: String::new(),
+            size_source: String::new(),
+            generated_at: String::new(),
         }
     }
 
